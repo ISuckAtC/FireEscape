@@ -587,8 +587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterCamera: {fileID: 20437472682476688}
-  slot: {fileID: 0}
-  Rotated: {fileID: 0}
+  slot: {fileID: 7929755871241527747}
+  Rotated: {fileID: 2025490614448486107}
   PickedUp: 0
   isUsingAxe: 0
   usedItem: 0

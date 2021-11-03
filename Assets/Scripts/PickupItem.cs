@@ -22,15 +22,9 @@ public class PickupItem : MonoBehaviour
     {
         var ray = characterCamera.ViewportPointToRay(Vector3.one * 0.5f);
         RaycastHit hit;
-        if (usedItem == true)
+        if (Input.GetKeyUp(KeyCode.Mouse1))
         {
-            pickedItem.transform.SetParent(null);
-            // Remove reference
-            pickedItem.unusable = true;
-            pickedItem = null;
-            // Remove parent
-
-            
+            DropItem(pickedItem);
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
