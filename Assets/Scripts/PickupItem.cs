@@ -35,6 +35,7 @@ public class PickupItem : MonoBehaviour
                 if (pickable && PickedUp == false)
                 {
                     // Pick it
+                    pickable.ParticleSystemOff = true;
                     PickItem(pickable);
                     PickedUp = true;
                 }
@@ -52,10 +53,10 @@ public class PickupItem : MonoBehaviour
         
             
         
-        if (slot.GetChild(0).gameObject.activeInHierarchy == false)
-        {
-            DropItem(slot.GetChild(0).gameObject.GetComponent<PickableItem>());
-        }
+       // if (slot.GetChild(0).gameObject.activeInHierarchy == false)
+        
+          //  DropItem(slot.GetChild(0).gameObject.GetComponent<PickableItem>());
+        
        
     }
     private void PickItem(PickableItem item)

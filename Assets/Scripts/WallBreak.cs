@@ -13,10 +13,14 @@ public class WallBreak : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(Player.isUsingAxe == true)
+        if(other.tag == "Player")
         {
-            gameObject.SetActive(false);
-            Player.usedItem = true;
+            if (Player.isUsingAxe == true)
+            {
+                gameObject.SetActive(false);
+                Player.usedItem = true;
+            }
         }
+       
     }
 }
