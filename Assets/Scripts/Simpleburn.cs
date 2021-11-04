@@ -15,7 +15,7 @@ public class Simpleburn : MonoBehaviour
     {
      if(gameObject.tag == "Fire")
         {
-            gameObject.transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
+            gameObject.transform.localScale += new Vector3(0.01f, 0.01f, 0.01f);
         }
         
     }
