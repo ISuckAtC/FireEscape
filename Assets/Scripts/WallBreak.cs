@@ -15,7 +15,7 @@ public class WallBreak : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if (Player.isUsingAxe == true)
+            if (Player.isUsingAxe == true && Player.PickedUp == true)
             {
                 gameObject.SetActive(false);
                 Player.usedItem = true;
