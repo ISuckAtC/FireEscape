@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed88ac9f35d3b742b79b303a97f0c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AxeMarker: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
+  MarkerPrefab: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
   Ratio: {x: 0.011682243, y: 0.028571429}
 --- !u!1 &105592643
 GameObject:
