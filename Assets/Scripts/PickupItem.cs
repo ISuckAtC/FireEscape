@@ -69,7 +69,7 @@ public class PickupItem : MonoBehaviour
         // Set Slot as a parent
         item.transform.SetParent(slot);
         item.transform.localPosition = Vector3.zero;
-
+        Physics.IgnoreCollision(item.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         item.transform.localEulerAngles = Vector3.zero;
         //  item.transform.localScale = handscale; 
 
