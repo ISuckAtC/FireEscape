@@ -11665,6 +11665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 6641819050937729170, guid: acd1591200166d440b1ddc9159731fb6, type: 3}
+      propertyPath: m_TagString
+      value: Axe
+      objectReference: {fileID: 0}
     - target: {fileID: 6641819050937729176, guid: acd1591200166d440b1ddc9159731fb6, type: 3}
       propertyPath: m_RootOrder
       value: 1
