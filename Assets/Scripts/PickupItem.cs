@@ -11,9 +11,11 @@ public class PickupItem : MonoBehaviour
     private PickableItem pickedItem;
     
     public bool PickedUp, isUsingAxe, usedItem, doneOnce;
-    
-   
-    public int Gold, recentGold;
+    [Header("how many valuables do you want the player to pickup to be slowed down?")]
+    public int HeavyValue;
+    [Header("Just keeping track of our gold")]
+    public int Gold;
+    public int recentGold;
     private int howSlow;
     public FirstPersonMovement FPM;
     
@@ -70,7 +72,7 @@ public class PickupItem : MonoBehaviour
             FPM.runSpeed = 9 -howSlow;
             doneOnce = false;
         }
-        if( recentGold >= 10)
+        if( recentGold >= HeavyValue)
         {
             FPM.speed--;
             FPM.runSpeed--;

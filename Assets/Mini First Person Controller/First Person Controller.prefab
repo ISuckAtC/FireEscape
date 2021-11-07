@@ -592,9 +592,10 @@ MonoBehaviour:
   PickedUp: 0
   isUsingAxe: 0
   usedItem: 0
-  PickupA: 0
+  doneOnce: 0
+  HeavyValue: 0
   Gold: 0
-  GoldWeight: 0
+  recentGold: 0
   FPM: {fileID: 114963311885979670}
 --- !u!1 &574453204531893780
 GameObject:
