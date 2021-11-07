@@ -9,11 +9,17 @@ public class PickupItem : MonoBehaviour
     [SerializeField]
     private Transform slot, Rotated;
     private PickableItem pickedItem;
-    public bool PickedUp, isUsingAxe, usedItem;
+    
+    public bool PickedUp, isUsingAxe, usedItem, doneOnce;
+    
+   
+    public int Gold, recentGold;
+    public FirstPersonMovement FPM;
     
     // Start is called before the first frame update
     void Start()
     {
+       
         
     }
 
@@ -31,6 +37,7 @@ public class PickupItem : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 5f))
             {
                 var pickable = hit.transform.GetComponent<PickableItem>();
+               
                 // If object has PickableItem class
                 if (pickable && PickedUp == false)
                 {
@@ -39,6 +46,7 @@ public class PickupItem : MonoBehaviour
                     PickItem(pickable);
                     PickedUp = true;
                 }
+                
             }
             slot.rotation = new Quaternion();
             isUsingAxe = false;
@@ -49,9 +57,25 @@ public class PickupItem : MonoBehaviour
             isUsingAxe = true;
 
         }
+        if( PickedUp == true && doneOnce == false)
+        {
+            FPM.speed = 3;
+            FPM.runSpeed = 5;
+            doneOnce = true;
+        }
+        if( PickedUp == false && doneOnce == true)
+        {
+            FPM.speed = 5;
+            FPM.runSpeed = 9;
+            doneOnce = false;
+        }
+        if( recentGold >= 10)
+        {
+            FPM.speed--;
+            FPM.runSpeed--;
+            recentGold = 0;
+        }
         
-        
-            
         
        // if (slot.GetChild(0).gameObject.activeInHierarchy == false)
         
