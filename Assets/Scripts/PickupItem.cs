@@ -14,6 +14,7 @@ public class PickupItem : MonoBehaviour
     
    
     public int Gold, recentGold;
+    private int howSlow;
     public FirstPersonMovement FPM;
     
     // Start is called before the first frame update
@@ -65,14 +66,15 @@ public class PickupItem : MonoBehaviour
         }
         if( PickedUp == false && doneOnce == true)
         {
-            FPM.speed = 5;
-            FPM.runSpeed = 9;
+            FPM.speed = 5 - howSlow;
+            FPM.runSpeed = 9 -howSlow;
             doneOnce = false;
         }
         if( recentGold >= 10)
         {
             FPM.speed--;
             FPM.runSpeed--;
+            howSlow++;
             recentGold = 0;
         }
         

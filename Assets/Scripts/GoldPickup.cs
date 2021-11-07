@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoldPickup : MonoBehaviour
 {
     public PickupItem Player;
-    [Header("PickupA, says if we pick it up with hands or invisibly  True to hold, false to vacuum")]
+    [Header("PickupA, says if we pick it up with hands or invisibly,  True to hold, false to vacuum")]
     public bool PickupA;
     // Start is called before the first frame update
     void Start()
