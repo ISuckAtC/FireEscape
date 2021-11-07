@@ -9,6 +9,8 @@ public class FireMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 pivotOffset = new Vector3(0.5f, -0.5f, 0.55f);
+
         GameObject[] axes = GameObject.FindGameObjectsWithTag("Axe");
         for (int i = 0; i < axes.Length; ++i)
         {
@@ -17,12 +19,11 @@ public class FireMap : MonoBehaviour
             GameObject markerAxe = Instantiate(MarkerPrefab, transform.position, transform.rotation);
             markerAxe.transform.Rotate(new Vector3(90f, 0, 0));
             markerAxe.transform.SetParent(transform);
-            markerAxe.transform.localPosition += (transform.right / 2f) + ((transform.forward / 2f) * 1.5f) - (transform.up / 2f);
-            //marker.transform.localPosition += transform.right / 2f;
-            //marker.transform.localPosition += (transform.forward / 2f) * 1.5f;
-            //marker.transform.localPosition -= transform.up / 2f;
-            Vector3 translationAxe = new Vector3(markerAxePosition.x * Ratio.x, markerAxePosition.y * Ratio.y, 0f);
-            markerAxe.transform.localPosition += (transform.up * translationAxe.y) - (transform.right * translationAxe.x);
+
+            markerAxe.transform.localPosition += pivotOffset;
+
+            Vector3 translationAxe = new Vector3(-markerAxePosition.x * Ratio.x, markerAxePosition.y * Ratio.y, 0f);
+            markerAxe.transform.localPosition += translationAxe;
         }
 
         Vector3 ourPosition = transform.position;
@@ -31,13 +32,10 @@ public class FireMap : MonoBehaviour
         markerOur.transform.Rotate(new Vector3(90f, 0, 0));
         markerOur.transform.SetParent(transform);
 
-        Vector3 pivotOffset = new Vector3(0.5f, -0.5f, 0f);
-        Debug.Log(pivotOffset);
         markerOur.transform.localPosition += pivotOffset;
-        markerOur.transform.position += transform.forward * 0.75f * transform.localScale.z;
 
         Vector3 translationOur = new Vector3(-markerOurPosition.x * Ratio.x, markerOurPosition.y * Ratio.y, 0f);
-        markerOur.transform.position += translationOur;
+        markerOur.transform.localPosition += translationOur;
         Renderer rndr = markerOur.GetComponent<Renderer>();
         rndr.material.color = new Color(0,0,1f,1f);
     }
