@@ -593,7 +593,7 @@ MonoBehaviour:
   isUsingAxe: 0
   usedItem: 0
   doneOnce: 0
-  HeavyValue: 0
+  HeavyValue: 10
   Gold: 0
   recentGold: 0
   FPM: {fileID: 114963311885979670}
