@@ -1064,6 +1064,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
+      propertyPath: maxBreath
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
+      propertyPath: totalTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1711958158313463789, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
       propertyPath: m_RootOrder
       value: 83
