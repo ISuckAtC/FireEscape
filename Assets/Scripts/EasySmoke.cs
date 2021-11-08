@@ -52,6 +52,9 @@ public class EasySmoke : MonoBehaviour
                 GetComponent<Renderer>().enabled = false;
                 // disable the script
                 enabled = false;
+
+
+                UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScene");
             }
         }
         else
