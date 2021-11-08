@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Axe
+  - Ground
   layers:
   - Default
   - TransparentFX

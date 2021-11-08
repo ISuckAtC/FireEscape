@@ -5,11 +5,15 @@ using UnityEngine;
 public class FireMap : MonoBehaviour
 {
     public GameObject MarkerPrefab;
-    public Vector2 Ratio;
+    private Vector2 Ratio;
     // Start is called before the first frame update
     void Start()
     {
+        Transform groundPlane = GameObject.FindWithTag("Ground").transform;
         Vector3 pivotOffset = new Vector3(0.5f, -0.5f, 0.55f);
+        Vector2 planeOffset = new Vector2(groundPlane.position.x, groundPlane.position.z) - new Vector2(groundPlane.localScale.x * 10 / 2, groundPlane.localScale.z * 10 / 2);
+
+        Ratio = new Vector2(1f / (groundPlane.localScale.x * 10), 1f / (groundPlane.localScale.z * 10));
 
         GameObject[] axes = GameObject.FindGameObjectsWithTag("Axe");
         for (int i = 0; i < axes.Length; ++i)
@@ -26,7 +30,7 @@ public class FireMap : MonoBehaviour
             markerAxe.transform.localPosition += translationAxe;
         }
 
-        Vector3 ourPosition = transform.position;
+        Vector3 ourPosition = transform.position - new Vector3(planeOffset.x, 0, planeOffset.y);
         Vector3 markerOurPosition = new Vector3(ourPosition.x, ourPosition.z, 0f);
         GameObject markerOur = Instantiate(MarkerPrefab, transform.position, transform.rotation);
         markerOur.transform.Rotate(new Vector3(90f, 0, 0));
