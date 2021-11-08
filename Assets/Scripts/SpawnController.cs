@@ -25,17 +25,17 @@ public class SpawnController : MonoBehaviour
             if(RandomSpawn == 1)
             {
                 Player.transform.position = Spawn1.transform.position;
-                Player.transform.rotation = Spawn1.transform.rotation;
+                Player.transform.localRotation = Spawn1.transform.localRotation;
             }
             if (RandomSpawn == 2)
             {
                 Player.transform.position = Spawn2.transform.position;
-                Player.transform.rotation = Spawn2.transform.rotation;
+                Player.transform.localRotation = Spawn2.transform.localRotation;
             }
             if (RandomSpawn == 3)
             {
                 Player.transform.position = Spawn3.transform.position;
-                Player.transform.rotation = Spawn3.transform.rotation;
+                Player.transform.localRotation = Spawn3.transform.localRotation;
             }
             Player.GetComponent<FirstPersonMovement>().enabled = true;
             OneTimeRule = true;
@@ -46,17 +46,17 @@ public class SpawnController : MonoBehaviour
             if (RandomSpawn == 4)
             {
                 Player.transform.position = Spawn4.transform.position;
-                Player.transform.rotation = Spawn4.transform.rotation;
+                Player.transform.localRotation = Spawn4.transform.localRotation;
             }
             if (RandomSpawn == 5)
             {
                 Player.transform.position = Spawn5.transform.position;
-                Player.transform.rotation = Spawn5.transform.rotation;
+                Player.transform.localRotation = Spawn5.transform.localRotation;
             }
             if (RandomSpawn == 6)
             {
                 Player.transform.position = Spawn6.transform.position;
-                Player.transform.rotation = Spawn6.transform.rotation;
+                Player.transform.localRotation = Spawn6.transform.localRotation;
             }
             Player.GetComponent<FirstPersonMovement>().enabled = true;
             OneTimeRule = true;
