@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4136,7 +4136,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 15.135873}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 125
+  m_RootOrder: 124
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &129371355
 BoxCollider:
@@ -9446,7 +9446,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 4.367384}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 134
+  m_RootOrder: 133
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &317178683
 BoxCollider:
@@ -10627,6 +10627,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335069623}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &338644464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1773623360729482, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+  m_PrefabInstance: {fileID: 499966977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &339539468
 GameObject:
   m_ObjectHideFlags: 0
@@ -13448,7 +13453,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 15.87415}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 126
+  m_RootOrder: 125
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &426263339
 BoxCollider:
@@ -14880,7 +14885,7 @@ Transform:
   - {fileID: 691282627}
   - {fileID: 1228856072}
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 143
+  m_RootOrder: 142
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &476680293
 GameObject:
@@ -15290,7 +15295,7 @@ Transform:
   - {fileID: 114147506}
   - {fileID: 143340635}
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 132
+  m_RootOrder: 131
   m_LocalEulerAnglesHint: {x: 0, y: 0.088, z: 0}
 --- !u!65 &487442383
 BoxCollider:
@@ -15481,7 +15486,7 @@ Transform:
   m_LocalScale: {x: 8.783822, y: 4.2466, z: 15.74379}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 137
+  m_RootOrder: 136
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &493886299
 BoxCollider:
@@ -19502,7 +19507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0563757c067fdb4f804335cc8145f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  Player: {fileID: 338644464}
   ExitNorth: {fileID: 1515524109}
   ExitSouth: {fileID: 1130564728}
   Spawn1: {fileID: 1041004101}
@@ -23927,7 +23932,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 7.2140574}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 127
+  m_RootOrder: 126
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &824739845
 BoxCollider:
@@ -24211,7 +24216,7 @@ Transform:
   - {fileID: 1069065061}
   - {fileID: 630229770}
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 142
+  m_RootOrder: 141
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838626382
 GameObject:
@@ -24947,7 +24952,7 @@ Transform:
   - {fileID: 589521679}
   - {fileID: 1927131939}
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 135
+  m_RootOrder: 134
   m_LocalEulerAnglesHint: {x: 0, y: 0.088, z: 0}
 --- !u!65 &869183460
 BoxCollider:
@@ -29000,7 +29005,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 2.838965}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 129
+  m_RootOrder: 128
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &990936972
 BoxCollider:
@@ -29214,7 +29219,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 144
+  m_RootOrder: 143
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1001465352
 GameObject:
@@ -31929,7 +31934,7 @@ Transform:
   - {fileID: 978286262}
   - {fileID: 1583865343}
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 136
+  m_RootOrder: 135
   m_LocalEulerAnglesHint: {x: 0, y: 90.299, z: 0}
 --- !u!65 &1105691409
 BoxCollider:
@@ -32739,7 +32744,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 9.982822}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 138
+  m_RootOrder: 137
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132896953
 GameObject:
@@ -34547,7 +34552,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 140
+  m_RootOrder: 139
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1202642173
 GameObject:
@@ -37355,7 +37360,6 @@ Transform:
   - {fileID: 115197696}
   - {fileID: 1455907223}
   - {fileID: 910736718}
-  - {fileID: 1340159409}
   - {fileID: 129371354}
   - {fileID: 426263338}
   - {fileID: 824739844}
@@ -37376,6 +37380,7 @@ Transform:
   - {fileID: 837132180}
   - {fileID: 470361871}
   - {fileID: 1001457545}
+  - {fileID: 1340159409}
   - {fileID: 1294635096}
   - {fileID: 1692289797}
   - {fileID: 544394931}
@@ -40676,7 +40681,7 @@ Transform:
   - {fileID: 1123429850}
   - {fileID: 589349167}
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 131
+  m_RootOrder: 130
   m_LocalEulerAnglesHint: {x: 0, y: 0.088, z: 0}
 --- !u!65 &1478914860
 BoxCollider:
@@ -41662,7 +41667,7 @@ Transform:
   m_LocalScale: {x: 1.80458, y: 4, z: 9.982822}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 139
+  m_RootOrder: 138
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1515524111
 BoxCollider:
@@ -51872,7 +51877,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 0.8767575}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 130
+  m_RootOrder: 129
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &1885758222
 BoxCollider:
@@ -52856,7 +52861,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 141
+  m_RootOrder: 140
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1928025052
 MonoBehaviour:
@@ -55228,7 +55233,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 7.2140574}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 133
+  m_RootOrder: 132
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1991640437
 BoxCollider:
@@ -58301,7 +58306,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 4, z: 7.2140574}
   m_Children: []
   m_Father: {fileID: 1350044382}
-  m_RootOrder: 128
+  m_RootOrder: 127
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &2114157797
 BoxCollider:
