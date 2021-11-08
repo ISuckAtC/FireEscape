@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SmallBuildingFloor.unity
+    path: Assets/Scenes/TestScenes/SmallBuildingFloor.unity
     guid: 1185571554971744eafa9040351b8833
   - enabled: 1
     path: Assets/Scenes/ExitScene.unity
