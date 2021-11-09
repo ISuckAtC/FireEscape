@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1711958158313463784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 40, y: 8, z: 18.89}
-  m_LocalScale: {x: 100, y: 10, z: 100}
+  m_LocalScale: {x: 176.37, y: 10, z: 125.329994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0419b19c9c54e4ea3934c4970c32d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 10
+  totalTime: 200
   distance: 6
   maxBreath: 10
   currentBreath: 0
@@ -127,6 +127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: c6cbcefd3ceb47d46a6c685a706c0680, type: 2}
   isGlobal: 0
-  blendDistance: 4.35
+  blendDistance: 0.25
   weight: 1
   priority: 0
