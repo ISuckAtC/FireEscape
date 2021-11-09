@@ -5,6 +5,8 @@ using UnityEngine;
 public class FireMap : MonoBehaviour
 {
     public GameObject MarkerPrefab;
+    public GameObject AxeMarkerPrefab;
+    public GameObject ExitMarkerPrefab;
     private Vector2 Ratio;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class FireMap : MonoBehaviour
         {
             Vector3 axePosition = axes[i].transform.position;
             Vector3 markerAxePosition = new Vector3(axePosition.x, axePosition.z, 0f);
-            GameObject markerAxe = Instantiate(MarkerPrefab, transform.position, transform.rotation);
+            GameObject markerAxe = Instantiate(AxeMarkerPrefab, transform.position, transform.rotation);
             markerAxe.transform.Rotate(new Vector3(90f, 0, 0));
             markerAxe.transform.SetParent(transform);
 
@@ -28,6 +30,21 @@ public class FireMap : MonoBehaviour
 
             Vector3 translationAxe = new Vector3(-markerAxePosition.x * Ratio.x, markerAxePosition.y * Ratio.y, 0f);
             markerAxe.transform.localPosition += translationAxe;
+        }
+
+        GameObject[] exits = GameObject.FindGameObjectsWithTag("Exit");
+        for (int i = 0; i < exits.Length; ++i)
+        {
+            Vector3 exitPosition = exits[i].transform.position;
+            Vector3 markerExitPosition = new Vector3(exitPosition.x, exitPosition.z, 0f);
+            GameObject markerExit = Instantiate(ExitMarkerPrefab, transform.position, transform.rotation);
+            markerExit.transform.Rotate(new Vector3(90f, 0, 0));
+            markerExit.transform.SetParent(transform);
+
+            markerExit.transform.localPosition += pivotOffset;
+
+            Vector3 translationExit = new Vector3(-markerExitPosition.x * Ratio.x, markerExitPosition.y * Ratio.y, 0f);
+            markerExit.transform.localPosition += translationExit;
         }
 
         Vector3 ourPosition = transform.position - new Vector3(planeOffset.x, 0, planeOffset.y);
