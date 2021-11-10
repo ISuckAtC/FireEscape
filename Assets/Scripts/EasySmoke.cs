@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // This file was written with mostly copilot
 
@@ -25,6 +26,26 @@ public class EasySmoke : MonoBehaviour
     // declare a private field to set the speed of the smoke
     private float speed = 0.0f;
 
+    // declare a public Image for the image overlay
+    public Image smokeOverlay;
+
+    // declare the public field for the color of the smoke 
+    public Color smokeColor = Color.white;
+    // declare the public field for the color of the damage effect 
+    public Color damageColor = Color.red;
+
+    // declare a public interval for the damage effect
+    public float damageInterval = 0.1f;
+
+    // declare a public field for the length of the damage effect
+    public float damageLength = 0.5f;
+
+    // declare a private field to store the current time of the damage effect
+    private float currentDamageTime = 0.0f;
+
+    // declare a private field to track whether or not we have flashed the damage effect
+    private bool damageFlashed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +57,9 @@ public class EasySmoke : MonoBehaviour
 
         // set the speed of the smoke to the distance divided by the total time
         speed = distance / totalTime;
+
+        // set the color of the smoke overlay to the smoke color
+        smokeOverlay.color = smokeColor;
     }
 
     // Update is called once per frame
@@ -44,6 +68,23 @@ public class EasySmoke : MonoBehaviour
         // if the player is in the smoke, decrease the current breath by the time
         if (inSmoke)
         {
+            if (currentDamageTime < damageInterval)
+            {
+                if (damageFlashed && currentDamageTime > 0)
+                {
+                    damageFlashed = false;
+                    smokeOverlay.color = smokeColor;
+                }
+                currentDamageTime += Time.deltaTime;
+            }
+            else
+            {
+                currentDamageTime = -damageLength;
+                smokeOverlay.color = damageColor;
+                damageFlashed = true;
+            }
+
+
             currentBreath -= Time.deltaTime;
             // if the current breath is less than 0, the player is dead
             if (currentBreath <= 0.0f)
@@ -74,6 +115,9 @@ public class EasySmoke : MonoBehaviour
             // set the inSmoke field to true
             inSmoke = true;
 
+            // activate the smoke overlay
+            smokeOverlay.enabled = true;
+
             // Log that the player has entered the smoke
             Debug.Log("Entered the smoke");
         }
@@ -86,6 +130,9 @@ public class EasySmoke : MonoBehaviour
         {
             // set the inSmoke field to false
             inSmoke = false;
+
+            // deactivate the smoke overlay
+            smokeOverlay.enabled = false;
 
             // log that the player has left the smoke
             Debug.Log("Left smoke");
