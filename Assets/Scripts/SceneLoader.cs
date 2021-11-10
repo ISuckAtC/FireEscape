@@ -27,4 +27,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(GameData.NextScene);
+    }
 }
