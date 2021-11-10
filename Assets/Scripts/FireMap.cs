@@ -20,7 +20,7 @@ public class FireMap : MonoBehaviour
         GameObject[] axes = GameObject.FindGameObjectsWithTag("Axe");
         for (int i = 0; i < axes.Length; ++i)
         {
-            Vector3 axePosition = axes[i].transform.position;
+            Vector3 axePosition = axes[i].transform.position - new Vector3(planeOffset.x, 0, planeOffset.y);
             Vector3 markerAxePosition = new Vector3(axePosition.x, axePosition.z, 0f);
             GameObject markerAxe = Instantiate(AxeMarkerPrefab, transform.position, transform.rotation);
             markerAxe.transform.Rotate(new Vector3(90f, 0, 0));
@@ -35,7 +35,7 @@ public class FireMap : MonoBehaviour
         GameObject[] exits = GameObject.FindGameObjectsWithTag("Exit");
         for (int i = 0; i < exits.Length; ++i)
         {
-            Vector3 exitPosition = exits[i].transform.position;
+            Vector3 exitPosition = exits[i].transform.position - new Vector3(planeOffset.x, 0, planeOffset.y);
             Vector3 markerExitPosition = new Vector3(exitPosition.x, exitPosition.z, 0f);
             GameObject markerExit = Instantiate(ExitMarkerPrefab, transform.position, transform.rotation);
             markerExit.transform.Rotate(new Vector3(90f, 0, 0));
@@ -45,6 +45,7 @@ public class FireMap : MonoBehaviour
 
             Vector3 translationExit = new Vector3(-markerExitPosition.x * Ratio.x, markerExitPosition.y * Ratio.y, 0f);
             markerExit.transform.localPosition += translationExit;
+            markerExit.GetComponent<Renderer>().material.color = new Color(0,1f,0,1f);
         }
 
         Vector3 ourPosition = transform.position - new Vector3(planeOffset.x, 0, planeOffset.y);

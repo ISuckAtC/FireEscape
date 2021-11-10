@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -52586,12 +52586,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398048478631690913, guid: 4f0897dcea40acd439c906f7f16226f9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6398048478631690915, guid: 4f0897dcea40acd439c906f7f16226f9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 83ea13df836be834b93edf27d74ab73b, type: 2}
+    - target: {fileID: 6398048478631690916, guid: 4f0897dcea40acd439c906f7f16226f9, type: 3}
+      propertyPath: AxeMarkerPrefab
+      value: 
+      objectReference: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
+    - target: {fileID: 6398048478631690916, guid: 4f0897dcea40acd439c906f7f16226f9, type: 3}
+      propertyPath: ExitMarkerPrefab
+      value: 
+      objectReference: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
     - target: {fileID: 6398048478631690917, guid: 4f0897dcea40acd439c906f7f16226f9, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -60483,6 +60491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c105459f5f5db4884a01ae46bc6452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelToLoad: 
 --- !u!1 &7776026713698753517
 GameObject:
   m_ObjectHideFlags: 0
@@ -60498,7 +60507,7 @@ GameObject:
   - component: {fileID: 7776026713698753516}
   m_Layer: 0
   m_Name: ExitTrigger
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60670,7 +60679,7 @@ GameObject:
   - component: {fileID: 7776026713976672887}
   m_Layer: 0
   m_Name: ExitTrigger (1)
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60687,6 +60696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c105459f5f5db4884a01ae46bc6452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelToLoad: 
 --- !u!1001 &8243682283986434589
 PrefabInstance:
   m_ObjectHideFlags: 0
