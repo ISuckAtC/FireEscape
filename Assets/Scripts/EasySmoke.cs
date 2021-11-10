@@ -56,7 +56,7 @@ public class EasySmoke : MonoBehaviour
                 UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScene");
             }
         }
-        else
+        else if (currentBreath < maxBreath)
         {
             // if the player is not in the smoke, increase the current breath by the time
             currentBreath += Time.deltaTime;
