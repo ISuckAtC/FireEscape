@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8673,6 +8673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1722487531}
   RandoRoom2: {fileID: 327756236}
   RandoRoom3: {fileID: 2076977892}
@@ -8858,6 +8860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1206875381}
   RandoRoom2: {fileID: 371085322}
   RandoRoom3: {fileID: 2025621184}
@@ -11649,6 +11653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 2105872388}
   RandoRoom2: {fileID: 1794785951}
   RandoRoom3: {fileID: 1148519702}
@@ -15738,6 +15744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1640699006}
   RandoRoom2: {fileID: 66121801}
   RandoRoom3: {fileID: 670967489}
@@ -16762,6 +16770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 368095730}
   RandoRoom2: {fileID: 1197693400}
   RandoRoom3: {fileID: 1835896388}
@@ -19354,12 +19364,15 @@ MonoBehaviour:
   Player: {fileID: 338644464}
   ExitNorth: {fileID: 1515524109}
   ExitSouth: {fileID: 1130564728}
+  ExitMiddle: {fileID: 0}
   Spawn1: {fileID: 1041004101}
   Spawn2: {fileID: 1708147053}
   Spawn3: {fileID: 1717280671}
   Spawn4: {fileID: 1896640319}
   Spawn5: {fileID: 477801017}
   Spawn6: {fileID: 1174418914}
+  Spawn7: {fileID: 0}
+  BS: {fileID: 0}
 --- !u!1 &630229769
 GameObject:
   m_ObjectHideFlags: 0
@@ -25788,6 +25801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1146562670}
   RandoRoom2: {fileID: 238577909}
   RandoRoom3: {fileID: 784265005}
@@ -28908,6 +28923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 974036938}
   RandoRoom2: {fileID: 78253732}
   RandoRoom3: {fileID: 1868123774}
@@ -32855,6 +32872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 66320790}
   RandoRoom2: {fileID: 358328175}
   RandoRoom3: {fileID: 952413714}
@@ -34480,6 +34499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1122500766}
   RandoRoom2: {fileID: 257731032}
   RandoRoom3: {fileID: 1479344843}
@@ -37005,6 +37026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1758965246}
   RandoRoom2: {fileID: 261890337}
   RandoRoom3: {fileID: 345612632}
@@ -39352,6 +39375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1777408221}
   RandoRoom2: {fileID: 99683061}
   RandoRoom3: {fileID: 1030753156}
@@ -46156,6 +46181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 1865063867}
   RandoRoom2: {fileID: 1910266731}
   RandoRoom3: {fileID: 691490635}
@@ -52499,57 +52526,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smoke
       objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463784, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: totalTime
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: damageLength
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: smokeColor.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: smokeColor.b
-      value: 0.41509432
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: smokeColor.g
-      value: 0.41509432
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: smokeColor.r
-      value: 0.41509432
-      objectReference: {fileID: 0}
     - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
       propertyPath: smokeOverlay
       value: 
       objectReference: {fileID: 1747300412}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: damageColor.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463785, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: damageInterval
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463787, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1711958158313463789, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711958158313463789, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 171.72
       objectReference: {fileID: 0}
     - target: {fileID: 1711958158313463789, guid: 8be26ea70bbf1ca41a05020cf5344811, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53399,6 +53382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 0}
   RandoRoom2: {fileID: 1201344024}
   RandoRoom3: {fileID: 0}
@@ -54810,6 +54795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 522893027}
   RandoRoom2: {fileID: 1823120919}
   RandoRoom3: {fileID: 122673906}
@@ -56074,6 +56061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 277893976}
   RandoRoom2: {fileID: 1581554690}
   RandoRoom3: {fileID: 669366975}
@@ -57722,6 +57711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5da8ef181bc1940b892ea06a789234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BS: {fileID: 0}
+  Walls: 0
   RandoRoom1: {fileID: 969393451}
   RandoRoom2: {fileID: 182229363}
   RandoRoom3: {fileID: 1516667734}
