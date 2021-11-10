@@ -7,6 +7,7 @@ public class BooleanScene : MonoBehaviour
     public static BooleanScene instance;
     [Header("True to hold, false to vacuum")]
     public bool HoldorVacuum;
+        public bool Level2;
     void Awake()
  {
       if(instance == null)
@@ -27,13 +28,13 @@ public class BooleanScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Level1")
+        if(SceneManager.GetActiveScene().name == "Level2")
         {
-            HoldorVacuum = false;
+            Level2 = true;
         }
-        if (SceneManager.GetActiveScene().name == "Level1_HoldGold")
+        else
         {
-            HoldorVacuum = true;
+
         }
     }
 }

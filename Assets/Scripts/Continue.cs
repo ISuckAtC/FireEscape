@@ -14,13 +14,14 @@ public class Continue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && BS.HoldorVacuum == false)
+        if (Input.GetKeyUp(KeyCode.Space) && BS.Level2 == true)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        if (Input.GetKeyUp(KeyCode.Space) && BS.Level2 == false)
         {
             SceneManager.LoadScene("Level1");
         }
-        if (Input.GetKeyUp(KeyCode.Space) && BS.HoldorVacuum == true)
-        {
-            SceneManager.LoadScene("Level1_HoldGold");
-        }
+          
     }
 }

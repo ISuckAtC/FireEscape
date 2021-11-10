@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
+    public BooleanScene BS;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        BS = GameObject.FindGameObjectWithTag("GameController").GetComponent<BooleanScene>();
     }
 
     // Update is called once per frame
@@ -17,11 +19,13 @@ public class SceneLoader : MonoBehaviour
     }
     public void Prototype1()
     {
+        BS.HoldorVacuum = false;
         SceneManager.LoadScene("Level1");
     }
     public void Prototype2()
     {
-        SceneManager.LoadScene("Level1_HoldGold");
+        BS.HoldorVacuum = true;
+        SceneManager.LoadScene("Level1");
     }
     public void MainMenu()
     {
@@ -29,6 +33,6 @@ public class SceneLoader : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(GameData.NextScene);
+        SceneManager.LoadScene(5);
     }
 }
