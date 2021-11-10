@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class BooleanScene : MonoBehaviour
 {
-    public BooleanScene instance;
+    public static BooleanScene instance;
     [Header("True to hold, false to vacuum")]
     public bool HoldorVacuum;
     void Awake()

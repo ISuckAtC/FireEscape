@@ -26,6 +26,7 @@ public class GoldPickup : MonoBehaviour
             {
                 Player.Gold++;
                 Player.recentGold++;
+                Player.showGold++;
                 gameObject.SetActive(false);
             }
             
