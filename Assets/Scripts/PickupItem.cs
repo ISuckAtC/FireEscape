@@ -7,7 +7,7 @@ public class PickupItem : MonoBehaviour
     [SerializeField]
     private Camera characterCamera;
     [SerializeField]
-    private Transform slot, Rotated;
+    private Transform slot, Rotated, goldPos1, goldPos2, goldPos3, goldPos4, goldPos5, goldPos6, goldPos7, goldPos8;
     private PickableItem pickedItem;
     public GameObject HandHoldGold1, HandHoldGold2, HandHoldGold3, HandHoldGold4, HandHoldGold5, HandHoldGold6, HandHoldGold7, HandHoldGold8;
     public bool PickedUp, isUsingAxe, usedItem, doneOnce;
@@ -22,6 +22,7 @@ public class PickupItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
        
         
     }
@@ -33,27 +34,51 @@ public class PickupItem : MonoBehaviour
         {
             case 1:
                 HandHoldGold1.SetActive(true);
+                HandHoldGold1.transform.position = goldPos1.position;
+                HandHoldGold1.transform.rotation = goldPos1.rotation;
+                HandHoldGold1.GetComponent<Rigidbody>().isKinematic = true;
                 break;
             case 2:
                 HandHoldGold2.SetActive(true);
+                HandHoldGold2.transform.position = goldPos2.position;
+                HandHoldGold2.transform.rotation = goldPos2.rotation;
+                HandHoldGold2.GetComponent<Rigidbody>().isKinematic = true;
                 break;
             case 3:
                 HandHoldGold3.SetActive(true);
+                HandHoldGold3.transform.position = goldPos3.position;
+                HandHoldGold3.transform.rotation = goldPos3.rotation;
+                HandHoldGold3.GetComponent<Rigidbody>().isKinematic = true;
                 break;
             case 4:
                 HandHoldGold4.SetActive(true);
+                HandHoldGold4.transform.position = goldPos4.position;
+                HandHoldGold4.transform.rotation = goldPos4.rotation;
+                HandHoldGold4.GetComponent<Rigidbody>().isKinematic = true;
                 break;
             case 5:
                 HandHoldGold5.SetActive(true);
+                HandHoldGold5.transform.position = goldPos5.position;
+                HandHoldGold5.transform.rotation = goldPos5.rotation;
+                HandHoldGold5.GetComponent<Rigidbody>().isKinematic = true;
                 break;
             case 6:
                 HandHoldGold6.SetActive(true);
+                HandHoldGold6.transform.position = goldPos6.position;
+                HandHoldGold6.transform.rotation = goldPos6.rotation;
+                HandHoldGold6.GetComponent<Rigidbody>().isKinematic = true;
                 break;
             case 7:
                 HandHoldGold7.SetActive(true);
+                HandHoldGold7.transform.position = goldPos7.position;
+                HandHoldGold7.transform.rotation = goldPos7.rotation;
+                HandHoldGold7.GetComponent<Rigidbody>().isKinematic = true;
                 break;
             case 8:
                 HandHoldGold8.SetActive(true);
+                HandHoldGold8.transform.position = goldPos8.position;
+                HandHoldGold8.transform.rotation = goldPos8.rotation;
+                HandHoldGold8.GetComponent<Rigidbody>().isKinematic = true;
                 break;
         }
         var ray = characterCamera.ViewportPointToRay(Vector3.one * 0.5f);
@@ -70,24 +95,32 @@ public class PickupItem : MonoBehaviour
                            break;
                     case 2:
                         HandHoldGold2.GetComponent<Rigidbody>().isKinematic = false;
-                         break;
+                        FPM.speed++;
+                        FPM.runSpeed++;
+                        break;
                     case 3:
                         HandHoldGold3.GetComponent<Rigidbody>().isKinematic = false;
                          break;
                     case 4:
                         HandHoldGold4.GetComponent<Rigidbody>().isKinematic = false;
-                       break;
+                        FPM.speed++;
+                        FPM.runSpeed++;
+                        break;
                     case 5:
                         HandHoldGold5.GetComponent<Rigidbody>().isKinematic = false;
                        break;
                     case 6:
                         HandHoldGold6.GetComponent<Rigidbody>().isKinematic = false;
-                       break;
+                        FPM.speed++;
+                        FPM.runSpeed++;
+                        break;
                     case 7:
                         HandHoldGold7.GetComponent<Rigidbody>().isKinematic = false;
                          break;
                     case 8:
                         HandHoldGold8.GetComponent<Rigidbody>().isKinematic = false;
+                        FPM.speed++;
+                        FPM.runSpeed++;
                         break;
                 }
                 goto nograbby;
@@ -97,6 +130,14 @@ public class PickupItem : MonoBehaviour
             showGold--;
             howSlow--;
             
+        }
+        if (FPM.speed < 0)
+        {
+            FPM.speed = 0;
+        }
+        if(FPM.runSpeed < 0)
+        {
+            FPM.runSpeed = 0;
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
