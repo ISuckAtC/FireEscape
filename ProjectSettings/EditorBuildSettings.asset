@@ -6,17 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScenes/SmallBuildingFloor.unity
-    guid: 1185571554971744eafa9040351b8833
+    path: Assets/Scenes/MainMenu.unity
+    guid: 89237bb225f103b45b26f5226c2f04c3
   - enabled: 1
     path: Assets/Scenes/ExitScene.unity
     guid: d657d4d1a50eff64294bff979dd33503
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: 30787d11fda6cd34a8a8b9e85ebfd88f
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 89237bb225f103b45b26f5226c2f04c3
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 998e8c5a5128e9243924cd60b6790511

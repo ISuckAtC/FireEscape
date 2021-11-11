@@ -33,6 +33,6 @@ public class SceneLoader : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
 }
