@@ -54452,6 +54452,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561292e563fd7134abee9a2393b3b13b, type: 3}
+--- !u!1 &1914538014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1354076498733682890, guid: 561292e563fd7134abee9a2393b3b13b, type: 3}
+  m_PrefabInstance: {fileID: 1914538013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1914538015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914538014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed88ac9f35d3b742b79b303a97f0c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarkerPrefab: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
+  AxeMarkerPrefab: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
+  ExitMarkerPrefab: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
+  IsSprite: 1
 --- !u!1 &1914795843
 GameObject:
   m_ObjectHideFlags: 0
