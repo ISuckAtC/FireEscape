@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public static GameObject Player;
+    public  bool ValueablePickup;
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,6 +19,7 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
         Player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame

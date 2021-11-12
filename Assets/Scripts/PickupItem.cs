@@ -18,12 +18,12 @@ public class PickupItem : MonoBehaviour
     public int recentGold;
     public int howSlow, showGold;
     public FirstPersonMovement FPM;
-    
+    public GameController GC;
     // Start is called before the first frame update
     void Start()
     {
-        
-       
+
+        GC = GameObject.Find("GameController").GetComponent<GameController>();
         
     }
 
@@ -153,7 +153,7 @@ public class PickupItem : MonoBehaviour
                     PickItem(pickable);
                     PickedUp = true;
                 }
-                
+                GC.ValueablePickup = true;
             }
             slot.rotation = new Quaternion();
             isUsingAxe = false;
