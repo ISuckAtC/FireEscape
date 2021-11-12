@@ -184,6 +184,10 @@ public class PickupItem : MonoBehaviour
             
             recentGold = 0;
         }
+        if(Gold >= 5)
+        {
+            GC.ManyValuables = true;
+        }
         if(howSlow < 0)
         {
             howSlow = 0;
