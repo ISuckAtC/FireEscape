@@ -19,7 +19,7 @@ public class RandomRoomPicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(BS.Level2 == true && Walls == false)
+        if(BS.Level2 == true)
         {
             if (RoomChoice == 1)
             {
@@ -38,8 +38,11 @@ public class RandomRoomPicker : MonoBehaviour
                 
             }
         }
-        if(BS.Level2 == true && Walls == true)
+       
+        if (BS.Level2 == false)
         {
+
+
             if (RoomChoice == 1)
             {
 
@@ -56,24 +59,7 @@ public class RandomRoomPicker : MonoBehaviour
                 RandoRoom1.SetActive(false);
                 RandoRoom2.SetActive(false);
             }
-            goto nomoreRando;
+
         }
-        if(RoomChoice == 1)
-        {
-            
-            RandoRoom2.SetActive(false);
-            RandoRoom3.SetActive(false);
-        }
-        if(RoomChoice == 2)
-        {
-            RandoRoom1.SetActive(false);
-            RandoRoom3.SetActive(false);
-        }
-        if (RoomChoice == 3)
-        {
-            RandoRoom1.SetActive(false);
-            RandoRoom2.SetActive(false);
-        }
-    nomoreRando:;
     }
 }

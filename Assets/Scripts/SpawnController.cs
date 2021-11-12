@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-
+   
     public GameObject Player, ExitNorth, ExitSouth,ExitMiddle, Spawn1, Spawn2, Spawn3, Spawn4, Spawn5, Spawn6, Spawn7;
     private int RandomSpawn,RandomExit;
     public BooleanScene BS;
@@ -24,7 +24,7 @@ public class SpawnController : MonoBehaviour
     LevelSkip:;
         Player.GetComponent<FirstPersonMovement>().enabled = false;
         Debug.LogWarning(RandomSpawn);
-        Debug.Log(RandomExit);
+        
     }
 
     // Update is called once per frame
