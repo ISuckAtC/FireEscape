@@ -7,6 +7,7 @@ public class FireMap : MonoBehaviour
     public GameObject MarkerPrefab;
     public GameObject AxeMarkerPrefab;
     public GameObject ExitMarkerPrefab;
+    public bool IsSprite;
     private Vector2 Ratio;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,13 @@ public class FireMap : MonoBehaviour
         Vector2 planeOffset = new Vector2(groundPlane.position.x, groundPlane.position.z) - new Vector2(groundPlane.localScale.x * 10 / 2, groundPlane.localScale.z * 10 / 2);
 
         Ratio = new Vector2(1f / (groundPlane.localScale.x * 10), 1f / (groundPlane.localScale.z * 10));
+
+        if (IsSprite)
+        {
+            SpriteRenderer mapSprite = GetComponent<SpriteRenderer>();
+            pivotOffset = new Vector3(mapSprite.bounds.size.x / 2f, -mapSprite.bounds.size.y / 2f, 0f);
+            Ratio = new Vector2(mapSprite.bounds.size.x / groundPlane.localScale.x, mapSprite.bounds.size.y / groundPlane.localScale.z);
+        }
 
         GameObject[] axes = GameObject.FindGameObjectsWithTag("Axe");
         for (int i = 0; i < axes.Length; ++i)
@@ -57,7 +65,7 @@ public class FireMap : MonoBehaviour
         markerOur.transform.localPosition += pivotOffset;
 
         Vector3 translationOur = new Vector3(-markerOurPosition.x * Ratio.x, markerOurPosition.y * Ratio.y, 0f);
-        markerOur.transform.localPosition += translationOur;
+        //markerOur.transform.localPosition += translationOur;
         Renderer rndr = markerOur.GetComponent<Renderer>();
         rndr.material.color = new Color(0,0,1f,1f);
     }
