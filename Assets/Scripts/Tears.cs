@@ -65,7 +65,7 @@ public class Tears : MonoBehaviour
         while (handSprite.color.a > 0)
         {
             Color c = handSprite.color;
-            c.a -= Time.deltaTime / HandFadeTime;
+            c.a -= Time.deltaTime / HandFadeTime; 
             handSprite.color = c;
             yield return null;
         }
