@@ -6,60 +6,24 @@ public class RandomRoomPicker : MonoBehaviour
 {
     int RoomChoice;
     public BooleanScene BS;
-    public bool Walls;
-   public GameObject RandoRoom1, RandoRoom2, RandoRoom3;
+   public GameObject[] RandoRoom;
     // Start is called before the first frame update
     void Start()
     {
-        BS = GameObject.FindGameObjectWithTag("GameController").GetComponent<BooleanScene>();
-        RoomChoice = Random.Range(1, 4);
+        BS = GameObject.Find("GameController").GetComponent<BooleanScene>(); ;
+        RoomChoice = Random.Range(1, RandoRoom.Length);
         Debug.LogError(RoomChoice);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(BS.Level2 == true)
-        {
-            if (RoomChoice == 1)
-            {
-
-                RandoRoom2.SetActive(false);
-                
-            }
-            if (RoomChoice == 2)
-            {
-                RandoRoom1.SetActive(false);
-                
-            }
-            if (RoomChoice == 3)
-            {
-                RandoRoom1.SetActive(false);
-                
-            }
-        }
        
-        if (BS.Level2 == false)
+       foreach(GameObject room in RandoRoom)
         {
-
-
-            if (RoomChoice == 1)
-            {
-
-                RandoRoom2.SetActive(false);
-                RandoRoom3.SetActive(false);
-            }
-            if (RoomChoice == 2)
-            {
-                RandoRoom1.SetActive(false);
-                RandoRoom3.SetActive(false);
-            }
-            if (RoomChoice == 3)
-            {
-                RandoRoom1.SetActive(false);
-                RandoRoom2.SetActive(false);
-            }
+            room.SetActive(false);
 
         }
+        RandoRoom[RoomChoice].SetActive(true);
     }
 }

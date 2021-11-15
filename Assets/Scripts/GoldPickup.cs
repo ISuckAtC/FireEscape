@@ -14,7 +14,7 @@ public class GoldPickup : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
         GC = GameObject.Find("GameController").GetComponent<GameController>();
-        BS = GameObject.FindGameObjectWithTag("GameController").GetComponent<BooleanScene>();
+        BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
         if(BS.HoldorVacuum == false)
         {
             PickupA = false;

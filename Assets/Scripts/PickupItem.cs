@@ -143,6 +143,12 @@ public class PickupItem : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 5f))
             {
+                if (hit.transform.GetComponent<GoldPickup>().PickupA== false)
+                {
+                    hit.transform.GetComponent<BoxCollider>().enabled = false;
+                    hit.transform.position = gameObject.transform.position;
+                    goto noPickup;
+                }
                 var pickable = hit.transform.GetComponent<PickableItem>();
                
                 // If object has PickableItem class
@@ -153,6 +159,7 @@ public class PickupItem : MonoBehaviour
                     PickItem(pickable);
                     PickedUp = true;
                 }
+            noPickup:;
                 GC.ValueablePickup = true;
             }
             slot.rotation = new Quaternion();

@@ -8,7 +8,7 @@ public class Continue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BS = GameObject.FindGameObjectWithTag("GameController").GetComponent<BooleanScene>();
+        BS = BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
     }
 
     // Update is called once per frame
