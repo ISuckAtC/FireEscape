@@ -118,6 +118,9 @@ public class EasySmoke : MonoBehaviour
             // activate the smoke overlay
             smokeOverlay.enabled = true;
 
+            // get the tears component of the player and set tearing to true
+            other.gameObject.GetComponent<Tears>().tearing = true;
+
             // Log that the player has entered the smoke
             Debug.Log("Entered the smoke");
         }
@@ -133,6 +136,9 @@ public class EasySmoke : MonoBehaviour
 
             // deactivate the smoke overlay
             smokeOverlay.enabled = false;
+
+            // get the tears component of the player and set tearing to false
+            other.gameObject.GetComponent<Tears>().tearing = false;
 
             // log that the player has left the smoke
             Debug.Log("Left smoke");
