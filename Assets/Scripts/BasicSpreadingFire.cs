@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class BasicSpreadingFire : MonoBehaviour
 {
-
+    public bool KillThem;
     private float FireSpread = 20;
     private GameObject childFire;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class BasicSpreadingFire : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && KillThem == true)
         {
             SceneManager.LoadScene("DeathScene");
         }
