@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 8758484659535538968}
   m_Layer: 0
   m_Name: Gold Stack
-  m_TagString: Untagged
+  m_TagString: Valuable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,6 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  BS: {fileID: 0}
+  GC: {fileID: 0}
   PickupA: 0
 --- !u!65 &8275776077589000940
 BoxCollider:

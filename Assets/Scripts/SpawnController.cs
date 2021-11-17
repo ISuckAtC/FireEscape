@@ -28,6 +28,11 @@ public class SpawnController : MonoBehaviour
         Debug.LogWarning(RandomSpawn);
         Debug.Log("Half the amount of spawns " + Spawns.Length / 2);
         Debug.Log("You spawned on spawnpoint " + RandomSpawn);
+        foreach (GameObject spawn in Spawns)
+        {
+            spawn.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        Spawns[RandomSpawn].transform.GetChild(0).gameObject.SetActive(true);
         Spawns[RandomSpawn].GetComponentInChildren<BasicSpreadingFire>().KillThem = true;
     }
 

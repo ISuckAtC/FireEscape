@@ -8,6 +8,7 @@ TagManager:
   - Axe
   - Ground
   - Exit
+  - Valuable
   layers:
   - Default
   - TransparentFX
