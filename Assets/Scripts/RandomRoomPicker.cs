@@ -11,19 +11,23 @@ public class RandomRoomPicker : MonoBehaviour
     void Start()
     {
         BS = GameObject.Find("GameController").GetComponent<BooleanScene>(); ;
-        RoomChoice = Random.Range(1, RandoRoom.Length);
+        RoomChoice = Random.Range(0, RandoRoom.Length);
         Debug.LogError(RoomChoice);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       if(RandoRoom.Length == 0)
+        {
+            goto norando;
+        }
        foreach(GameObject room in RandoRoom)
         {
             room.SetActive(false);
 
         }
         RandoRoom[RoomChoice].SetActive(true);
+    norando:;
     }
 }
