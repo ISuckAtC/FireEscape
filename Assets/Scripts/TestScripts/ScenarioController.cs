@@ -9,7 +9,7 @@ public class ScenarioController : MonoBehaviour
     public int ScenarioSelection;
     private PowerOutage powerOutage;
 
-    bool playedOnce;
+    [SerializeField] bool playedOnce;
 
     // Start is called before the first frame update
     void Start()
