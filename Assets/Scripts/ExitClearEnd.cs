@@ -10,6 +10,7 @@ public class ExitClearEnd : MonoBehaviour
     void Start()
     {
         GC= GameObject.Find("GameController").GetComponent<GameController>();
+        
     }
 
     // Update is called once per frame
