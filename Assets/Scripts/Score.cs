@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
     public PickupItem PI;
     public GoldFinderForUI GFFUI;
     public int actualGoldLength;
-    private bool DoOnce;
+    public bool DoOnce;
     // Start is called before the first frame update
     void Start()
     {

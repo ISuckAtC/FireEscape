@@ -13,10 +13,7 @@ public class Simpleburn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if(gameObject.tag == "Fire")
-        {
-            gameObject.transform.localScale += new Vector3(0.01f, 0.01f, 0.01f);
-        }
+     
         
     }
     private void OnTriggerEnter(Collider other)

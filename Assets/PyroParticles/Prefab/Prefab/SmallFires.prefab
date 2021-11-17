@@ -14680,6 +14680,8 @@ GameObject:
   - component: {fileID: 11426332}
   - component: {fileID: 11437672}
   - component: {fileID: 868512090183071475}
+  - component: {fileID: 1264333225330486037}
+  - component: {fileID: 474315303957471266}
   m_Layer: 8
   m_Name: SmallFires
   m_TagString: Untagged
@@ -14759,3 +14761,28 @@ MonoBehaviour:
   FS: {fileID: 19818194}
   Smoke: {fileID: 19830650}
   Sound: {fileID: 8233310}
+--- !u!65 &1264333225330486037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.39, y: 3.06, z: 2.95}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &474315303957471266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392c8192c6e36104ebbb5fb0eb9604bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
