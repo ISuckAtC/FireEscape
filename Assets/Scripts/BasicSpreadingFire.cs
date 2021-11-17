@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class BasicSpreadingFire : MonoBehaviour
 {
     public bool KillThem;
-    private float FireSpread = 20;
+    private float FireSpread = 5;
     private GameObject childFire;
     // Start is called before the first frame update
     void Start()
