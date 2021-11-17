@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Simpleburn : MonoBehaviour
 {
+    public float deathTimer, maxTime ;
     // Start is called before the first frame update
     void Start()
     {
-        
+        deathTimer = 0;
+        maxTime = 2;
     }
 
     // Update is called once per frame
@@ -16,11 +18,17 @@ public class Simpleburn : MonoBehaviour
      
         
     }
-    private void OnTriggerEnter(Collider other)
+   
+    private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player")
+        deathTimer += Time.deltaTime;
+        if (other.tag == "Player" && deathTimer > maxTime)
         {
             SceneManager.LoadScene("DeathScene");
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        deathTimer = 0;
     }
 }

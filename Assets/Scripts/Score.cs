@@ -15,17 +15,18 @@ public class Score : MonoBehaviour
         ScoreText = gameObject.GetComponent<Text>();
         PI = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
         GFFUI = GameObject.Find("GameController").GetComponent<GoldFinderForUI>();
-        
+        actualGoldLength = GFFUI.pickables.Length;
         Debug.Log(actualGoldLength);
+        Debug.Log("GFFUI gold length " + GFFUI.pickables.Length);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(DoOnce == false)
+        if(actualGoldLength == 0 && DoOnce == false)
         {
             actualGoldLength = GFFUI.pickables.Length;
-            DoOnce = true;
+            
         }
         
         ScoreText.text = "You've found " + PI.Gold + "  out of " + actualGoldLength  + " valuables!";
