@@ -20,7 +20,7 @@ public class Continue : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space) && BS.Level2 == false)
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Level1_LightsOutP");
         }
           
     }

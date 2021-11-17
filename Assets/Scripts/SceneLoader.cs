@@ -35,4 +35,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
+
+    public void LightsOutScene()
+    {
+        SceneManager.LoadScene("level1_LightsOutP");
+    }
 }

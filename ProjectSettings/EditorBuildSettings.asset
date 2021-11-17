@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: 30787d11fda6cd34a8a8b9e85ebfd88f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level1.unity
     guid: 998e8c5a5128e9243924cd60b6790511
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level2.unity
     guid: 5a774ff82b363df498f6401c8b3627bd
+  - enabled: 1
+    path: Assets/Scenes/Level1_LightsOutP.unity
+    guid: 18a3814270c1d354180cb9a607e7c077
   m_configObjects: {}
