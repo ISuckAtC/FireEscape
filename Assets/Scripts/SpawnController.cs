@@ -27,11 +27,8 @@ public class SpawnController : MonoBehaviour
         Player.GetComponent<FirstPersonMovement>().enabled = false;
         Debug.LogWarning(RandomSpawn);
         Debug.Log("Half the amount of spawns " + Spawns.Length / 2);
-        foreach (GameObject spawn in Spawns)
-        {
-            
-        }
-        Spawns[RandomSpawn].GetComponent<BasicSpreadingFire>().KillThem = true;
+        Debug.Log("You spawned on spawnpoint " + RandomSpawn);
+        Spawns[RandomSpawn].GetComponentInChildren<BasicSpreadingFire>().KillThem = true;
     }
 
     // Update is called once per frame
@@ -40,7 +37,7 @@ public class SpawnController : MonoBehaviour
 
 
 
-        if (RandomSpawn < 4 && OneTimeRule == false)
+        if (RandomSpawn <= Spawns.Length/2 && OneTimeRule == false)
         {
             if(RandomBonusExit.Length == 0)
             {
