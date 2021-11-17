@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6988746551616284931}
   m_Layer: 0
   m_Name: RedBagPickable
-  m_TagString: Untagged
+  m_TagString: Valuable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +54,7 @@ MonoBehaviour:
   BS: {fileID: 0}
   GC: {fileID: 0}
   PickupA: 1
+  shrinkEm: 0
 --- !u!65 &7757475576673202423
 BoxCollider:
   m_ObjectHideFlags: 0

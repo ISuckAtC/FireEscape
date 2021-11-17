@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8144762323450700632}
   m_Layer: 0
   m_Name: BooksPickable
-  m_TagString: Untagged
+  m_TagString: Valuable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +54,7 @@ MonoBehaviour:
   BS: {fileID: 0}
   GC: {fileID: 0}
   PickupA: 1
+  shrinkEm: 0
 --- !u!65 &8817229159619066540
 BoxCollider:
   m_ObjectHideFlags: 0
