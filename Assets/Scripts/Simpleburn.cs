@@ -9,7 +9,7 @@ public class Simpleburn : MonoBehaviour
     void Start()
     {
         deathTimer = 0;
-        maxTime = 2;
+        maxTime = 8;
     }
 
     // Update is called once per frame

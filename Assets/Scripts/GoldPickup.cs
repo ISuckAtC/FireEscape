@@ -28,6 +28,7 @@ public class GoldPickup : MonoBehaviour
             PickupA = true;
         }
         PickupNoise.Stop();
+        PickupNoise.volume = 0.75f;
     }
 
     // Update is called once per frame
