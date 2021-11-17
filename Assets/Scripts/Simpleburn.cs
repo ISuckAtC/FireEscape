@@ -9,7 +9,7 @@ public class Simpleburn : MonoBehaviour
     void Start()
     {
         deathTimer = 0;
-        maxTime = 8;
+        maxTime = 4;
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Simpleburn : MonoBehaviour
    
     private void OnTriggerStay(Collider other)
     {
-        deathTimer += Time.deltaTime;
+        this.deathTimer += Time.deltaTime;
         if (other.tag == "Player" && deathTimer > maxTime)
         {
             SceneManager.LoadScene("DeathScene");

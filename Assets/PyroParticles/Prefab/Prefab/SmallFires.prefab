@@ -14787,4 +14787,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathTimer: 0
-  maxTime: 8
+  maxTime: 4
