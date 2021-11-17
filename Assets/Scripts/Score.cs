@@ -23,7 +23,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(actualGoldLength == 0 && DoOnce == false)
+        if(actualGoldLength == 0 )
         {
             actualGoldLength = GFFUI.pickables.Length;
             
