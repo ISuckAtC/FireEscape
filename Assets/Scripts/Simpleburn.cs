@@ -21,7 +21,7 @@ public class Simpleburn : MonoBehaviour
    
     private void OnTriggerStay(Collider other)
     {
-        this.deathTimer += Time.deltaTime/2;
+        this.deathTimer += Time.deltaTime;
         if (other.tag == "Player" && deathTimer > maxTime)
         {
             SceneManager.LoadScene("DeathScene");

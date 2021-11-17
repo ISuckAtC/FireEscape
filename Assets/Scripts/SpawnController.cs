@@ -33,7 +33,7 @@ public class SpawnController : MonoBehaviour
             spawn.transform.GetChild(0).gameObject.SetActive(false);
         }
         Spawns[RandomSpawn].transform.GetChild(0).gameObject.SetActive(true);
-        Spawns[RandomSpawn].GetComponentInChildren<BasicSpreadingFire>().KillThem = true;
+       // Spawns[RandomSpawn].GetComponentInChildren<BasicSpreadingFire>().KillThem = true;
     }
 
     // Update is called once per frame
