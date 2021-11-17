@@ -29,6 +29,10 @@ public class Simpleburn : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        deathTimer = 0;
+        if (other.tag == "Player")
+        {
+            deathTimer = 0;
+        }
+        
     }
 }
