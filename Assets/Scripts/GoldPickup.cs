@@ -7,6 +7,8 @@ public class GoldPickup : MonoBehaviour
     public PickupItem Player;
     public BooleanScene BS;
     public GameController GC;
+    public AudioSource PickupNoise;
+    private bool DoOnce;
     [Header("PickupA, says if we pick it up with hands or invisibly,  True to hold, false to vacuum")]
     public bool PickupA;
     [Header("shrinkEm, literally just controlls the part that makes the object shrink when picked up, after a second the object is turned off and picked up")]
@@ -25,6 +27,7 @@ public class GoldPickup : MonoBehaviour
         {
             PickupA = true;
         }
+        PickupNoise.Stop();
     }
 
     // Update is called once per frame
@@ -32,7 +35,12 @@ public class GoldPickup : MonoBehaviour
     {
         if(shrinkEm == true)
         {
-            gameObject.transform.localScale -= Vector3.one/10;
+            if(DoOnce == false)
+            {
+                PickupNoise.Play();
+                DoOnce = true;
+            }
+            gameObject.transform.localScale -= Vector3.one/30;
             if(gameObject.transform.localScale.z < 0.1)
             {
                 Player.Gold++;
