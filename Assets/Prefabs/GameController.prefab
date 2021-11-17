@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5143396548875218055}
   - component: {fileID: 5143396548875218104}
   - component: {fileID: 5143396548875218054}
+  - component: {fileID: 8477528726098839451}
+  - component: {fileID: 585843934852957754}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -58,3 +60,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073f306fc715afb499f53b7c873c0529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ValueablePickup: 0
+  ManyValuables: 0
+  Muted: 0
+--- !u!114 &8477528726098839451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143396548875218105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1548a7027bfc14ebaecb32ea7e6b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickables: []
+--- !u!114 &585843934852957754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143396548875218105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a31781bc1faa3949afedbfc664668dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GC: {fileID: 0}
