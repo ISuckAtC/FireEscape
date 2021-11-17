@@ -131,13 +131,13 @@ public class PickupItem : MonoBehaviour
             howSlow--;
             
         }
-        if (FPM.speed < 0)
+        if (FPM.speed < 1)
         {
-            FPM.speed = 0;
+            FPM.speed = 1;
         }
-        if(FPM.runSpeed < 0)
+        if(FPM.runSpeed < 1)
         {
-            FPM.runSpeed = 0;
+            FPM.runSpeed = 1;
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
