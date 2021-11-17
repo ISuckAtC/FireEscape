@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text ScoreText;
-    public PickupItem PI;
+    public GameController GC;
     public GoldFinderForUI GFFUI;
     public int actualGoldLength;
     public bool DoOnce;
@@ -13,7 +13,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         ScoreText = gameObject.GetComponent<Text>();
-        PI = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
+        GC = GameObject.Find("GameController").GetComponent<GameController>();
         GFFUI = GameObject.Find("GameController").GetComponent<GoldFinderForUI>();
         actualGoldLength = GFFUI.pickables.Length;
         Debug.Log(actualGoldLength);
@@ -28,7 +28,7 @@ public class Score : MonoBehaviour
             actualGoldLength = GFFUI.pickables.Length;
             
         }
-        
-        ScoreText.text = "You've found " + PI.Gold + "  out of " + actualGoldLength  + " valuables!";
+        GC.maxValuablesForPreviousLevel = actualGoldLength;
+        ScoreText.text = "You've found " + GC.Valuables + "  out of " + actualGoldLength  + " valuables!";
     }
 }

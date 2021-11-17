@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public static GameObject Player;
     public  bool ValueablePickup, ManyValuables, Muted;
+    public int Valuables, maxValuablesForPreviousLevel;
     // Start is called before the first frame update
     void Awake()
     {

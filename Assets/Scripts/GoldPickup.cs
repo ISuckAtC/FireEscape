@@ -36,6 +36,7 @@ public class GoldPickup : MonoBehaviour
             if(gameObject.transform.localScale.z < 0.1)
             {
                 Player.Gold++;
+                GC.Valuables++;
                 Player.recentGold++;
                 Player.showGold++;
                 gameObject.SetActive(false);
