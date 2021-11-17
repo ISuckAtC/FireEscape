@@ -13,6 +13,7 @@ public class StartingParticles : MonoBehaviour
         FP.Clear();
         FS.Clear();
         Smoke.Clear();
+        Sound.Stop();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class StartingParticles : MonoBehaviour
             FP.Play();
             FS.Play();
             Smoke.Play();
+            Sound.Play();
             started = true;
         }
     }
