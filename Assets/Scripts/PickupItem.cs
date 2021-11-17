@@ -173,21 +173,21 @@ public class PickupItem : MonoBehaviour
         }
         if( PickedUp == true && doneOnce == false)
         {
-            FPM.speed = 3 - howSlow;
-            FPM.runSpeed = 5 -howSlow;
+         //   FPM.speed = 3 - howSlow;
+         //   FPM.runSpeed = 5 -howSlow;
             doneOnce = true;
         }
         if( PickedUp == false && doneOnce == true)
         {
-            FPM.speed = 5 - howSlow;
-            FPM.runSpeed = 9 -howSlow;
+        //    FPM.speed = 5 - howSlow;
+          //  FPM.runSpeed = 9 -howSlow;
             doneOnce = false;
         }
         if( recentGold >= HeavyValue)
         {
-            FPM.speed--;
-            FPM.runSpeed--;
-            howSlow++;
+         //   FPM.speed--;
+          //  FPM.runSpeed--;
+           // howSlow++;
             
             recentGold = 0;
         }

@@ -46,7 +46,7 @@ public class GoldPickup : MonoBehaviour
                 Player.Gold++;
                 GC.Valuables++;
                 Player.recentGold++;
-                Player.showGold++;
+              //  Player.showGold++;
                 gameObject.SetActive(false);
             }
         }
