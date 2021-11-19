@@ -145,8 +145,9 @@ public class PickupItem : MonoBehaviour
             {
                 if (hit.transform.GetComponent<GoldPickup>().PickupA== false)
                 {
-                    hit.transform.GetComponent<BoxCollider>().enabled = false;
-                    hit.transform.position = gameObject.transform.position;
+                   // hit.transform.GetComponent<BoxCollider>().enabled = false;
+                  //  hit.transform.GetComponent<GoldPickup>().shrinkEm = true;
+                    // hit.transform.position = gameObject.transform.position;
                     goto noPickup;
                 }
                 var pickable = hit.transform.GetComponent<PickableItem>();

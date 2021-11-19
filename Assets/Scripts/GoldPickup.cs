@@ -11,6 +11,7 @@ public class GoldPickup : MonoBehaviour
     private bool DoOnce;
     [Header("PickupA, says if we pick it up with hands or invisibly,  True to hold, false to vacuum")]
     public bool PickupA;
+    
     [Header("shrinkEm, literally just controlls the part that makes the object shrink when picked up, after a second the object is turned off and picked up")]
     public bool shrinkEm;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class GoldPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(shrinkEm == true)
+        if(shrinkEm == true )
         {
             if(DoOnce == false)
             {
@@ -52,13 +53,13 @@ public class GoldPickup : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
         {
-            if(PickupA == false)
+            if(Input.GetKeyUp(KeyCode.E))
             {
-                GC.ValueablePickup = true;
+               // GC.ValueablePickup = true;
                 shrinkEm = true;
                
             }
