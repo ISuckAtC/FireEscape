@@ -71,43 +71,75 @@ public class ExitClearEnd : MonoBehaviour
 
         System.DateTimeOffset endTime = System.DateTimeOffset.Now;
         System.TimeSpan timeSpan = endTime - GC.startTime;
-        TimerCard.text = timeSpan.ToString("mm':'ss");
+        TimerCard.text = "You took " + (timeSpan.ToString("mm") != "00" ? timeSpan.ToString("mm") + " minutes and " : "") + timeSpan.ToString("ss") + " seconds to get out";
 
         if (GC.Valuables == 0)
         {
             ScoreCard.text += "You escaped unscathed, congratulations on following good fire safety practices!\n\n";
-            Invoke(nameof(GradeA), 5f);
+            StartCoroutine(GradeA());
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel / 4f))
         {
             ScoreCard.text += "You managed to escape with little damage. The things you brought with you can cover the medical bills. If you manage to convince them they are actually yours, that is\nYou could have been more efficient!\n\n";
-            Invoke(nameof(GradeB), 5f);
+            StartCoroutine(GradeB());
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel * 2f / 4f))
         {
             ScoreCard.text += "You got out, but the effects of the fire and smoke will take some time to recover. Your items arent enough to cover the cost of your medical bills.\nDo better next time!\n\n";
-            Invoke(nameof(GradeC), 5f);
+            StartCoroutine(GradeC());
         }
         else
         {
             ScoreCard.text += "You spent too long looking for valuables, and you now have super cancer. You will die in 7 days.\nThis could have been avoided...\n\n";
-            Invoke(nameof(GradeF), 5f);
+            StartCoroutine(GradeF());
         }
     }
-    public void GradeA()
+    public IEnumerator GradeA()
     {
+        yield return new WaitForSeconds(5f);
+        Vector3 scale = StampA.transform.localScale;
+        StampA.transform.localScale = Vector3.zero;
         StampA.enabled = true;
+        while (scale != StampA.transform.localScale)
+        {
+            StampA.transform.localScale = Vector3.MoveTowards(StampA.transform.localScale, scale, Time.deltaTime * 3f);
+            yield return null;
+        }
     }
-    public void GradeB()
+    public IEnumerator GradeB()
     {
+        yield return new WaitForSeconds(5f);
+        Vector3 scale = StampB.transform.localScale;
+        StampB.transform.localScale = Vector3.zero;
         StampB.enabled = true;
+        while (scale != StampB.transform.localScale)
+        {
+            StampB.transform.localScale = Vector3.MoveTowards(StampB.transform.localScale, scale, Time.deltaTime * 3f);
+            yield return null;
+        }
     }
-    public void GradeC()
+    public IEnumerator GradeC()
     {
+        yield return new WaitForSeconds(5f);
+        Vector3 scale = StampC.transform.localScale;
+        StampC.transform.localScale = Vector3.zero;
         StampC.enabled = true;
+        while (scale != StampC.transform.localScale)
+        {
+            StampC.transform.localScale = Vector3.MoveTowards(StampC.transform.localScale, scale, Time.deltaTime * 3f);
+            yield return null;
+        }
     }
-    public void GradeF()
+    public IEnumerator GradeF()
     {
+        yield return new WaitForSeconds(5f);
+        Vector3 scale = StampF.transform.localScale;
+        StampF.transform.localScale = Vector3.zero;
         StampF.enabled = true;
+        while (scale != StampF.transform.localScale)
+        {
+            StampF.transform.localScale = Vector3.MoveTowards(StampF.transform.localScale, scale, Time.deltaTime * 3f);
+            yield return null;
+        }
     }
 }
