@@ -71,7 +71,7 @@ public class ExitClearEnd : MonoBehaviour
 
         System.DateTimeOffset endTime = System.DateTimeOffset.Now;
         System.TimeSpan timeSpan = endTime - GC.startTime;
-        TimerCard.text = timeSpan.ToString("mm':'ss':'fff");
+        TimerCard.text = timeSpan.ToString("mm':'ss");
 
         if (GC.Valuables == 0)
         {

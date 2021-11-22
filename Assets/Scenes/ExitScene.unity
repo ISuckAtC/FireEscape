@@ -942,10 +942,10 @@ MonoBehaviour:
   badText: {fileID: 0}
   badestText: {fileID: 0}
   TimerCard: {fileID: 244577878}
-  StampA: {fileID: 0}
-  StampB: {fileID: 0}
-  StampC: {fileID: 0}
-  StampF: {fileID: 0}
+  StampA: {fileID: 1547244713}
+  StampB: {fileID: 59383246}
+  StampC: {fileID: 1616723483}
+  StampF: {fileID: 1359950564}
   Old: 0
 --- !u!1 &1342256149
 GameObject:
