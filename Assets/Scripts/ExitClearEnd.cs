@@ -95,49 +95,49 @@ public class ExitClearEnd : MonoBehaviour
     }
     public IEnumerator GradeA()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         Vector3 scale = StampA.transform.localScale;
         StampA.transform.localScale = Vector3.zero;
         StampA.enabled = true;
         while (scale != StampA.transform.localScale)
         {
-            StampA.transform.localScale = Vector3.MoveTowards(StampA.transform.localScale, scale, Time.deltaTime * 3f);
+            StampA.transform.localScale = Vector3.MoveTowards(StampA.transform.localScale, scale, Time.deltaTime * 2f);
             yield return null;
         }
     }
     public IEnumerator GradeB()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         Vector3 scale = StampB.transform.localScale;
         StampB.transform.localScale = Vector3.zero;
         StampB.enabled = true;
         while (scale != StampB.transform.localScale)
         {
-            StampB.transform.localScale = Vector3.MoveTowards(StampB.transform.localScale, scale, Time.deltaTime * 3f);
+            StampB.transform.localScale = Vector3.MoveTowards(StampB.transform.localScale, scale, Time.deltaTime * 2f);
             yield return null;
         }
     }
     public IEnumerator GradeC()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         Vector3 scale = StampC.transform.localScale;
         StampC.transform.localScale = Vector3.zero;
         StampC.enabled = true;
         while (scale != StampC.transform.localScale)
         {
-            StampC.transform.localScale = Vector3.MoveTowards(StampC.transform.localScale, scale, Time.deltaTime * 3f);
+            StampC.transform.localScale = Vector3.MoveTowards(StampC.transform.localScale, scale, Time.deltaTime * 2f);
             yield return null;
         }
     }
     public IEnumerator GradeF()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         Vector3 scale = StampF.transform.localScale;
         StampF.transform.localScale = Vector3.zero;
         StampF.enabled = true;
         while (scale != StampF.transform.localScale)
         {
-            StampF.transform.localScale = Vector3.MoveTowards(StampF.transform.localScale, scale, Time.deltaTime * 3f);
+            StampF.transform.localScale = Vector3.MoveTowards(StampF.transform.localScale, scale, Time.deltaTime * 2f);
             yield return null;
         }
     }
