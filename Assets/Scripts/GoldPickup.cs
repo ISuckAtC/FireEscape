@@ -1,26 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GoldPickup : MonoBehaviour
 {
     public PickupItem Player;
     public BooleanScene BS;
     public GameController GC;
     public AudioSource PickupNoise;
-    private bool DoOnce;
+    private bool DoOnce, DoOnceForText;
     [Header("PickupA, says if we pick it up with hands or invisibly,  True to hold, false to vacuum")]
     public bool PickupA;
-    
+    public Text PickupHint;
     [Header("shrinkEm, literally just controlls the part that makes the object shrink when picked up, after a second the object is turned off and picked up")]
     public bool shrinkEm;
     // Start is called before the first frame update
     void Start()
     {
+        PickupHint = GameObject.FindGameObjectWithTag("PickupText").GetComponent<Text>();
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
         GC = GameObject.Find("GameController").GetComponent<GameController>();
         BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
-        if(BS.HoldorVacuum == false)
+        
+        if (BS.HoldorVacuum == false)
         {
             PickupA = false;
         }
@@ -57,14 +59,27 @@ public class GoldPickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            if(DoOnceForText == false)
+            {
+                PickupHint.text = "Press E to pickup!";
+            }
+            
             if(Input.GetKey(KeyCode.E))
             {
                // GC.ValueablePickup = true;
                 shrinkEm = true;
-               
+                DoOnceForText = true;
+                PickupHint.text = " ";
             }
             
 
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            PickupHint.text = " ";
         }
     }
 }
