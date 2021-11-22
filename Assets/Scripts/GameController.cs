@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public static GameObject Player;
     public  bool ValueablePickup, ManyValuables, Muted;
     public int Valuables, maxValuablesForPreviousLevel;
+    public System.DateTimeOffset startTime;
     // Start is called before the first frame update
     void Awake()
     {
