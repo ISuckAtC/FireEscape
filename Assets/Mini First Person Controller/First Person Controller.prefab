@@ -586,7 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: 306
   movement: {fileID: 114963311885979670}
-  movementSpeed: 2
+  movementSpeed: 5
   headToLower: {fileID: 4490257326247362}
   crouchYHeadPosition: 1
   colliderToLower: {fileID: 136877096903737240}
@@ -631,6 +631,7 @@ MonoBehaviour:
   howSlow: 0
   showGold: 0
   FPM: {fileID: 114963311885979670}
+  GC: {fileID: 0}
 --- !u!54 &323724602589007963
 Rigidbody:
   m_ObjectHideFlags: 0
