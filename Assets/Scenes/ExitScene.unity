@@ -938,6 +938,15 @@ MonoBehaviour:
   GC: {fileID: 0}
   ScoreCard: {fileID: 974312512}
   GradeText: {fileID: 825716202}
+  goodText: {fileID: 0}
+  badText: {fileID: 0}
+  badestText: {fileID: 0}
+  TimerCard: {fileID: 244577878}
+  StampA: {fileID: 0}
+  StampB: {fileID: 0}
+  StampC: {fileID: 0}
+  StampF: {fileID: 0}
+  Old: 0
 --- !u!1 &1342256149
 GameObject:
   m_ObjectHideFlags: 0
