@@ -57,7 +57,7 @@ public class GoldPickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if(Input.GetKeyUp(KeyCode.E))
+            if(Input.GetKey(KeyCode.E))
             {
                // GC.ValueablePickup = true;
                 shrinkEm = true;
