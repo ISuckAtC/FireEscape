@@ -21,6 +21,7 @@ public class ExitClearEnd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Old) return;
        /* if(GC.ManyValuables == true)
         {
             badestText.SetActive(true);
@@ -35,7 +36,6 @@ public class ExitClearEnd : MonoBehaviour
         {
             GradeText.text = "You Survived!";
         }
-        if (!Old) return;
         /* if(GC.ManyValuables == true)
          {
              badestText.SetActive(true);
@@ -66,8 +66,7 @@ public class ExitClearEnd : MonoBehaviour
     public void EndCardLoad()
     {
         ScoreCard.text = "";
-        ScoreCard.text += "These are your results\n\n\n";
-        ScoreCard.text += "You picked up " + GC.Valuables + "  out of " + GC.maxValuablesForPreviousLevel + " valuables\n\n";
+        ScoreCard.text += "These are your results\n\n";
 
         System.DateTimeOffset endTime = System.DateTimeOffset.Now;
         System.TimeSpan timeSpan = endTime - GC.startTime;
