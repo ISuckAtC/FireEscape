@@ -59,7 +59,7 @@ public class ExitClearEnd : MonoBehaviour
             ScoreCard.text = "you did what you were supposed to do.";
             goto Winner;
         }
-        ScoreCard.text = "You found " + GC.Valuables + "  out of " + GC.maxValuablesForPreviousLevel + " valuables in the previous level!";
+        ScoreCard.text = "You picked up " + GC.Valuables + "  out of " + GC.maxValuablesForPreviousLevel + " valuables in the previous level!";
     Winner:;
     }
 
@@ -67,7 +67,7 @@ public class ExitClearEnd : MonoBehaviour
     {
         ScoreCard.text = "";
         ScoreCard.text += "These are your results\n\n\n";
-        ScoreCard.text += "You found " + GC.Valuables + "  out of " + GC.maxValuablesForPreviousLevel + " valuables\n\n";
+        ScoreCard.text += "You picked up " + GC.Valuables + "  out of " + GC.maxValuablesForPreviousLevel + " valuables\n\n";
 
         System.DateTimeOffset endTime = System.DateTimeOffset.Now;
         System.TimeSpan timeSpan = endTime - GC.startTime;

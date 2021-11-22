@@ -29,6 +29,6 @@ public class Score : MonoBehaviour
             
         }
         GC.maxValuablesForPreviousLevel = actualGoldLength;
-        ScoreText.text = "You've found " + GC.Valuables + "  out of " + actualGoldLength  + " valuables!";
+        ScoreText.text = "You've picked up " + GC.Valuables + "  out of " + actualGoldLength  + " valuables!";
     }
 }
