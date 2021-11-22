@@ -80,17 +80,17 @@ public class ExitClearEnd : MonoBehaviour
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel / 4f))
         {
-            ScoreCard.text += "You managed to escape with little damage.\n\n";
+            ScoreCard.text += "You managed to escape with little damage. The things you brought with you can cover the medical bills. If you manage to convince them they are actually yours, that is\nYou could have been more efficient!\n\n";
             Invoke(nameof(GradeB), 5f);
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel * 2f / 4f))
         {
-            ScoreCard.text += "You got out, but the effects of the fire and smoke will take some time to recover.\n\n";
+            ScoreCard.text += "You got out, but the effects of the fire and smoke will take some time to recover. Your items arent enough to cover the cost of your medical bills.\nDo better next time!\n\n";
             Invoke(nameof(GradeC), 5f);
         }
         else
         {
-            ScoreCard.text += "You spent too long looking for valuables, and you now have super cancer. You will die in 7 days.\n\n";
+            ScoreCard.text += "You spent too long looking for valuables, and you now have super cancer. You will die in 7 days.\nThis could have been avoided...\n\n";
             Invoke(nameof(GradeF), 5f);
         }
     }
