@@ -937,15 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GC: {fileID: 0}
   ScoreCard: {fileID: 974312512}
-<<<<<<< HEAD
   GradeText: {fileID: 825716202}
-=======
-  StampA: {fileID: 1547244713}
-  StampB: {fileID: 59383246}
-  StampC: {fileID: 1616723483}
-  StampF: {fileID: 1359950564}
-  Old: 0
->>>>>>> e358df9 (a)
 --- !u!1 &1342256149
 GameObject:
   m_ObjectHideFlags: 0
