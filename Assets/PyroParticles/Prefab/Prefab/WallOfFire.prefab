@@ -4884,6 +4884,7 @@ GameObject:
   - component: {fileID: 494314}
   - component: {fileID: 11496392}
   - component: {fileID: 11456478}
+  - component: {fileID: 554549957117767852}
   m_Layer: 8
   m_Name: WallOfFire
   m_TagString: Untagged
@@ -4948,6 +4949,22 @@ MonoBehaviour:
   ForceRadius: 0
   IsProjectile: 0
   ManualParticleSystems: []
+--- !u!114 &554549957117767852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c727073852782494d908a6a87bbe862b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FP: {fileID: 19824636}
+  FS: {fileID: 19861520}
+  Smoke: {fileID: 19883490}
+  Sound: {fileID: 8215432}
 --- !u!1 &134962
 GameObject:
   m_ObjectHideFlags: 0
@@ -14517,7 +14534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 494314}
