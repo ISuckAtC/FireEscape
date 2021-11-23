@@ -14,6 +14,10 @@ public class StartingParticles : MonoBehaviour
         FP.Clear();
         FS.Clear();
         Smoke.Clear();
+        if(isMuted == true)
+        {
+            Sound.enabled = false;
+        }
         if(isMuted == false)
         {
             Sound.Stop();
