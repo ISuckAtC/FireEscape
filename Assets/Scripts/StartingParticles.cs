@@ -7,13 +7,18 @@ public class StartingParticles : MonoBehaviour
     public ParticleSystem FP, FS, Smoke;
     public AudioSource Sound;
     private bool started;
+    public bool isMuted;
     // Start is called before the first frame update
     void Start()
     {
         FP.Clear();
         FS.Clear();
         Smoke.Clear();
-        Sound.Stop();
+        if(isMuted == false)
+        {
+            Sound.Stop();
+        }
+        
     }
 
     // Update is called once per frame
@@ -24,7 +29,11 @@ public class StartingParticles : MonoBehaviour
             FP.Play();
             FS.Play();
             Smoke.Play();
-            Sound.Play();
+            if(isMuted == false)
+            {
+                Sound.Play();
+            }
+            
             started = true;
         }
     }

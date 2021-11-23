@@ -4965,6 +4965,7 @@ MonoBehaviour:
   FS: {fileID: 19861520}
   Smoke: {fileID: 19883490}
   Sound: {fileID: 8215432}
+  isMuted: 1
 --- !u!1 &134962
 GameObject:
   m_ObjectHideFlags: 0
