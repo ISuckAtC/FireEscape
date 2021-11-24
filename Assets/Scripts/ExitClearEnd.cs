@@ -79,17 +79,17 @@ public class ExitClearEnd : MonoBehaviour
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel / 4f))
         {
-            ScoreCard.text += "You managed to escape with little damage. The things you brought with you can cover the medical bills. If you manage to convince them they are actually yours, that is\nYou could have been more efficient!\n\n";
-            StartCoroutine(GradeB());
+            ScoreCard.text += "You managed to escape, however, you have first degree burn marks all over your body and a few second degree ones, the itens you picked can only cover for the drive to the hospital (yeah they charge that).";
+            StartCoroutine(GradeF());
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel * 2f / 4f))
         {
-            ScoreCard.text += "You got out, but the effects of the fire and smoke will take some time to recover. Your items arent enough to cover the cost of your medical bills.\nDo better next time!\n\n";
+            ScoreCard.text += "You got out but have several second degree burns on your body, you will mostly likely need surgical intervention, the itens you picked up will cover around 30% of the costs.";
             StartCoroutine(GradeC());
         }
         else
         {
-            ScoreCard.text += "You spent too long looking for valuables, and you now have super cancer. You will die in 7 days.\nThis could have been avoided...\n\n";
+            ScoreCard.text += "You barely managed to escape, you have severe burns all over your body, you'll need immediate surgical intervention and might be incapacitated for the rest of your life, the itens you picked up cover 15% of the costs, also you got snaids unfortunately..";
             StartCoroutine(GradeF());
         }
     }
