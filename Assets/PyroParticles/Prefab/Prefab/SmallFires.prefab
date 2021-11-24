@@ -4943,7 +4943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &437396
 Transform:
   m_ObjectHideFlags: 0
@@ -14761,6 +14761,7 @@ MonoBehaviour:
   FS: {fileID: 19818194}
   Smoke: {fileID: 19830650}
   Sound: {fileID: 8233310}
+  isMuted: 0
 --- !u!65 &1264333225330486037
 BoxCollider:
   m_ObjectHideFlags: 0
