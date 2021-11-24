@@ -11,12 +11,25 @@ public class SpawnController : MonoBehaviour
     private bool OneTimeRule;
     public GameObject[] Spawns,RandomBonusExit;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        RandomSpawn = Random.Range(0, Spawns.Length);
+        Debug.Log("You spawned on spawnpoint " + RandomSpawn);
+        if (RandomSpawn <= Spawns.Length / 2)
+        {
+            ExitSouth.SetActive(false);
+        }
+        if (RandomSpawn > Spawns.Length / 2)
+        {
+            ExitNorth.SetActive(false);
+        }
+    }
     void Start()
     {
         BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
         Player.GetComponent<FirstPersonMovement>().enabled = false;
         
-        RandomSpawn = Random.Range(0, Spawns.Length);
+        
        
         if(RandomBonusExit.Length == 0)
         {
@@ -27,14 +40,14 @@ public class SpawnController : MonoBehaviour
         Player.GetComponent<FirstPersonMovement>().enabled = false;
         Debug.LogWarning(RandomSpawn);
         Debug.Log("Half the amount of spawns " + Spawns.Length / 2);
-        Debug.Log("You spawned on spawnpoint " + RandomSpawn);
+        
         foreach (GameObject spawn in Spawns)
         {
             spawn.transform.GetChild(0).gameObject.SetActive(false);
         }
         Spawns[RandomSpawn].transform.GetChild(0).gameObject.SetActive(true);
        // Spawns[RandomSpawn].GetComponentInChildren<BasicSpreadingFire>().KillThem = true;
-
+       
         GameController.instance.startTime = System.DateTimeOffset.Now;
     }
 
@@ -54,7 +67,7 @@ public class SpawnController : MonoBehaviour
         noRando:;
             Player.transform.position = Spawns[RandomSpawn].transform.position;
             Player.transform.rotation = Spawns[RandomSpawn].transform.rotation;
-            ExitSouth.SetActive(false);
+            
             Player.GetComponent<FirstPersonMovement>().enabled = true;
             OneTimeRule = true;
         }
@@ -69,7 +82,7 @@ public class SpawnController : MonoBehaviour
             Player.transform.position = Spawns[RandomSpawn].transform.position;
             Player.transform.rotation = Spawns[RandomSpawn].transform.rotation;
             Player.GetComponent<FirstPersonMovement>().enabled = true;
-            ExitNorth.SetActive(false);
+            
             OneTimeRule = true;
            
             
