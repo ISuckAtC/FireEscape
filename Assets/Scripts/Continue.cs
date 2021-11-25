@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 public class Continue : MonoBehaviour
 {
     public BooleanScene BS;
+    public GameController GC;
     // Start is called before the first frame update
     void Start()
     {
-        BS = BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
+         BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
+        GC = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class Continue : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && BS.Level2 == false)
         {
             SceneManager.LoadScene("Level1_LightsOutP");
+            GC.Valuables = 0;
         }
           
     }
