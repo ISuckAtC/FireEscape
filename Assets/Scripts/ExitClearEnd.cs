@@ -79,17 +79,17 @@ public class ExitClearEnd : MonoBehaviour
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel / 4f))
         {
-            ScoreCard.text += "You managed to escape, however, you have first degree burn marks all over your body and a few second degree ones, the itens you picked can only cover for the drive to the hospital (yeah they charge that).";
+            ScoreCard.text += "You managed to escape, however, you have first degree burn marks all over your body and a few second degree ones, the items you picked can only cover for the drive to the hospital (yeah they charge that).";
             StartCoroutine(GradeF());
         }
         else if (GC.Valuables < (GC.maxValuablesForPreviousLevel * 2f / 4f))
         {
-            ScoreCard.text += "You got out but have several second degree burns on your body, you will mostly likely need surgical intervention, the itens you picked up will cover around 30% of the costs.";
-            StartCoroutine(GradeC());
+            ScoreCard.text += "You got out but have several second degree burns on your body, you will mostly likely need surgical intervention, the items you picked up will cover around 30% of the costs.";
+            StartCoroutine(GradeF());
         }
         else
         {
-            ScoreCard.text += "You barely managed to escape, you have severe burns all over your body, you'll need immediate surgical intervention and might be incapacitated for the rest of your life, the itens you picked up cover 15% of the costs, also you got snaids unfortunately..";
+            ScoreCard.text += "You barely managed to escape, you have severe burns all over your body, you'll need immediate surgical intervention and might be incapacitated for the rest of your life, the items you picked up cover 15% of the costs, also you got aids unfortunately..";
             StartCoroutine(GradeF());
         }
     }
