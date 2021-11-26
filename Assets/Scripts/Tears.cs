@@ -8,11 +8,13 @@ public class Tears : MonoBehaviour
     public float TearSpeed = 1f;
     public GameObject WipingHand;
     public GameObject TearsObject;
+    public GameObject WipeIndicator;
     public float HandSpeed = 1f;
     public float HandDistance = 1f;
     public float HandFadeTime = 1f;
     public KeyCode WipeKey = KeyCode.Space;
     public Vector2 HandWipeDrag;
+    public float WipeIndicatorThreshold = 0.5f;
     private Vector3 handStartPosition;
 
     private bool wiping;
@@ -35,6 +37,10 @@ public class Tears : MonoBehaviour
             Color c = tearsSprite.color;
             c.a += TearSpeed * Time.deltaTime;
             tearsSprite.color = c;
+            if (c.a >= WipeIndicatorThreshold && WipeIndicator.activeSelf == false)
+            {
+                WipeIndicator.SetActive(true);
+            }
         }
         if (!wiping && Input.GetKeyDown(WipeKey))
         {
@@ -45,6 +51,7 @@ public class Tears : MonoBehaviour
     public IEnumerator Wipe()
     {
         wiping = true;
+        WipeIndicator.SetActive(false);
         {
             Color c = handSprite.color;
             c.a = 1f;
