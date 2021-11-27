@@ -20,6 +20,14 @@ public class Extinguisher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameObject.GetComponentInParent<PickupItem>().FailedExtinguisher == true)
+        {
+            Failure = true;
+        }
+        if(gameObject.GetComponentInParent<PickupItem>().FailedExtinguisher == false)
+        {
+            Failure = false;
+        }
         if (Input.GetKey(KeyCode.Mouse0) && Failure == false && TotalTime >0)
         {
             inUse = true;

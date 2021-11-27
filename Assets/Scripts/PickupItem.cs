@@ -20,6 +20,8 @@ public class PickupItem : MonoBehaviour
     public FirstPersonMovement FPM;
     public GameController GC;
     public GameObject FireExtinguisher;
+    [Header("Just tells us if the FireExtinguisher failed or not, is rolled every pickup")]
+    public int RNG;
     // Start is called before the first frame update
     void Start()
     {
@@ -157,6 +159,11 @@ public class PickupItem : MonoBehaviour
                 if (hit.transform.tag == "Extinguisher")
                 {
                     Extinguisher = true;
+                    RNG = Random.Range(1, 100);
+                    if(RNG < 50)
+                    {
+                        FailedExtinguisher = true;
+                    }
                     hit.transform.GetComponent<DummyDisable>().DisableMe = true;
                 }
                 if (hit.transform.GetComponent<GoldPickup>().PickupA== false)
