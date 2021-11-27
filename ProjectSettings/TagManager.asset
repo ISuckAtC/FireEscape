@@ -10,6 +10,7 @@ TagManager:
   - Exit
   - Valuable
   - PickupText
+  - Extinguisher
   layers:
   - Default
   - TransparentFX

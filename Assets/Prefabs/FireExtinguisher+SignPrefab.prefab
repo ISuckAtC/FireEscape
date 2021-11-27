@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 5925394914575007198}
   - component: {fileID: 7062683012433802657}
   - component: {fileID: 4478690521384190875}
+  - component: {fileID: 5205257776614123649}
   m_Layer: 0
   m_Name: fire-extinguisher
-  m_TagString: Untagged
+  m_TagString: Extinguisher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,8 +126,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2233262, y: 0.54810643, z: 0.15976554}
+  m_Size: {x: 0.2, y: 0.51, z: 0.22}
   m_Center: {x: -0.031780332, y: 0.2672733, z: 0}
+--- !u!114 &5205257776614123649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5274691575264353856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974397c39e54fee42bbb336236f9c15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisableMe: 0
 --- !u!1 &7911157907906259300
 GameObject:
   m_ObjectHideFlags: 0

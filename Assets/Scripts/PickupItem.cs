@@ -10,7 +10,7 @@ public class PickupItem : MonoBehaviour
     private Transform slot, Rotated, goldPos1, goldPos2, goldPos3, goldPos4, goldPos5, goldPos6, goldPos7, goldPos8;
     private PickableItem pickedItem;
     public GameObject HandHoldGold1, HandHoldGold2, HandHoldGold3, HandHoldGold4, HandHoldGold5, HandHoldGold6, HandHoldGold7, HandHoldGold8;
-    public bool PickedUp, isUsingAxe, usedItem, doneOnce;
+    public bool PickedUp, isUsingAxe, usedItem, doneOnce, Extinguisher, FailedExtinguisher;
     [Header("how many valuables do you want the player to pickup to be slowed down?")]
     public int HeavyValue;
     [Header("Just keeping track of our gold")]
@@ -19,6 +19,7 @@ public class PickupItem : MonoBehaviour
     public int howSlow, showGold;
     public FirstPersonMovement FPM;
     public GameController GC;
+    public GameObject FireExtinguisher;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,15 @@ public class PickupItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Extinguisher == false)
+        {
+            FireExtinguisher.SetActive(false);
+        }
+        if(Extinguisher == true)
+        {
+            FireExtinguisher.SetActive(true);
+        }
+        /*
         switch( showGold)
         {
             case 1:
@@ -80,7 +90,7 @@ public class PickupItem : MonoBehaviour
                 HandHoldGold8.transform.rotation = goldPos8.rotation;
                 HandHoldGold8.GetComponent<Rigidbody>().isKinematic = true;
                 break;
-        }
+        }*/
         var ray = characterCamera.ViewportPointToRay(Vector3.one * 0.5f);
         RaycastHit hit;
         if (Input.GetKeyUp(KeyCode.Mouse1))
@@ -88,7 +98,8 @@ public class PickupItem : MonoBehaviour
             
             if(pickedItem == null)
             {
-                switch (showGold)
+                Extinguisher = false;
+              /*  switch (showGold)
                 {
                     case 1:
                         HandHoldGold1.GetComponent<Rigidbody>().isKinematic = false;
@@ -122,7 +133,7 @@ public class PickupItem : MonoBehaviour
                         FPM.speed++;
                         FPM.runSpeed++;
                         break;
-                }
+                }*/
                 goto nograbby;
             }
             DropItem(pickedItem);
@@ -143,6 +154,11 @@ public class PickupItem : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 5f))
             {
+                if (hit.transform.tag == "Extinguisher")
+                {
+                    Extinguisher = true;
+                    hit.transform.GetComponent<DummyDisable>().DisableMe = true;
+                }
                 if (hit.transform.GetComponent<GoldPickup>().PickupA== false)
                 {
                    // hit.transform.GetComponent<BoxCollider>().enabled = false;
@@ -212,6 +228,9 @@ public class PickupItem : MonoBehaviour
     }
     private void PickItem(PickableItem item)
     {
+
+        // Check tag of item, if fire extinguisher use that
+        
         // Assign reference
         pickedItem = item;
         item.Rb.isKinematic = true;

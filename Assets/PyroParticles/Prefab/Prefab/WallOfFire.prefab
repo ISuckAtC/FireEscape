@@ -4885,6 +4885,7 @@ GameObject:
   - component: {fileID: 11496392}
   - component: {fileID: 11456478}
   - component: {fileID: 554549957117767852}
+  - component: {fileID: 2561904731632937543}
   m_Layer: 8
   m_Name: WallOfFire
   m_TagString: Untagged
@@ -4966,6 +4967,19 @@ MonoBehaviour:
   Smoke: {fileID: 19883490}
   Sound: {fileID: 8215432}
   isMuted: 1
+--- !u!114 &2561904731632937543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad973ad1bcaec244caa5dcdd94f5f2a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: 0
 --- !u!1 &134962
 GameObject:
   m_ObjectHideFlags: 0
@@ -14520,9 +14534,12 @@ GameObject:
   - component: {fileID: 437362}
   - component: {fileID: 19861520}
   - component: {fileID: 19960416}
+  - component: {fileID: 8966270045166494983}
+  - component: {fileID: 3791486677711742221}
+  - component: {fileID: 6080597002123009465}
   m_Layer: 8
   m_Name: WallOfFireFlame
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19265,3 +19282,43 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &8966270045166494983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.2, y: 2.6, z: 0.93}
+  m_Center: {x: -0.010040283, y: -0.0012198687, z: -0.0019378662}
+--- !u!65 &3791486677711742221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.89, y: 1.38, z: 0.19}
+  m_Center: {x: -0.010040283, y: -0.0012198687, z: -0.0019378662}
+--- !u!114 &6080597002123009465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392c8192c6e36104ebbb5fb0eb9604bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathTimer: 0
+  maxTime: 4
