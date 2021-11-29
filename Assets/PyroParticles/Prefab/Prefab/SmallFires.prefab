@@ -14789,3 +14789,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTimer: 0
   maxTime: 4
+  damageInterval: 0.1
+  damageLength: 0.05
+  initialFlashTimer: 0.05
+  fireOverlay: {fileID: 0}
+  Player: {fileID: 0}
+  PlayerAudio: {fileID: 0}
+  DamageSoundInterval: 5
+  DamageSounds:
+  - {fileID: 8300000, guid: 0bc8586727f1f254b8840007311b7559, type: 3}
+  - {fileID: 8300000, guid: a367f9e395311014fb896c0036db706b, type: 3}
+  - {fileID: 8300000, guid: fa5316753af445347804da1c2c76b94d, type: 3}

@@ -71,6 +71,8 @@ public class EasySmoke : MonoBehaviour
 
         // find the player
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
+
+        PlayerAudio = Player.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,6 +96,18 @@ public class EasySmoke : MonoBehaviour
                 currentDamageTime -= damageLength;
                 smokeOverlay.color = damageColor;
                 damageFlashed = true;
+                if (++currentDamageSoundInterval > DamageSoundInterval)
+                {
+                    currentDamageSoundInterval = 0;
+                    if (DamageSounds.Length > 0)
+                    {
+                        PlayerAudio.PlayOneShot(DamageSounds[Random.Range(0, DamageSounds.Length)]);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("There are no damage sounds assigned to EasySmoke component on " + gameObject.name);
+                    }
+                }
             }
 
 

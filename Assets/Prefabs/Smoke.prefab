@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0419b19c9c54e4ea3934c4970c32d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   totalTime: 200
   distance: 6
   maxBreath: 10
@@ -118,6 +119,12 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 0.3137255}
   damageInterval: 1.25
   damageLength: 0.75
+  PlayerAudio: {fileID: 0}
+  DamageSoundInterval: 5
+  DamageSounds:
+  - {fileID: 8300000, guid: 50c14c8611cc7924b8f30c5efbc9aefc, type: 3}
+  - {fileID: 8300000, guid: da6e96f0f2a4dc64aa099eaecf234be1, type: 3}
+  - {fileID: 8300000, guid: 84fcda19d822feb4fa270c5f229bf7b4, type: 3}
 --- !u!114 &2532740932380421402
 MonoBehaviour:
   m_ObjectHideFlags: 0
