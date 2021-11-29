@@ -79,7 +79,7 @@ public class EasySmoke : MonoBehaviour
             }
             else
             {
-                currentDamageTime = -damageLength;
+                currentDamageTime -= damageLength;
                 smokeOverlay.color = damageColor;
                 damageFlashed = true;
             }
