@@ -4966,7 +4966,7 @@ MonoBehaviour:
   FS: {fileID: 19861520}
   Smoke: {fileID: 19883490}
   Sound: {fileID: 8215432}
-  isMuted: 1
+  isMuted: 0
 --- !u!114 &2561904731632937543
 MonoBehaviour:
   m_ObjectHideFlags: 0

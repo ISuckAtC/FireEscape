@@ -25,7 +25,7 @@ namespace DigitalRuby.PyroParticles
                 AudioSource.Stop();
             }
 
-            TargetVolume = 0.5f;
+            TargetVolume = 0.25f;
 
             this.startMultiplier = currentMultiplier = startMultiplier;
             this.stopMultiplier = stopMultiplier;

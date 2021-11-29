@@ -23,6 +23,8 @@ public class FireReset : MonoBehaviour
                 Flames.SetActive(true);
                 Flames.GetComponent<ParticleSystem>().Stop();
                 Flames.GetComponent<ParticleSystem>().Play();
+                Flames.GetComponent<AudioSource>().Stop();
+                Flames.GetComponent<AudioSource>().Play();
                 Flames.GetComponent<Simpleburn>().deathTimer =0;
                 Timer = 0;
             }
