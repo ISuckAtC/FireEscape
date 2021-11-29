@@ -20,6 +20,8 @@ public class PickupItem : MonoBehaviour
     public FirstPersonMovement FPM;
     public GameController GC;
     public GameObject FireExtinguisher;
+    [Header("Keeping Track of how long we have been in either the Fire or Smoke")]
+    public float FireTime, SmokeTime;
     [Header("Just tells us if the FireExtinguisher failed or not, is rolled every pickup")]
     public int RNG;
     // Start is called before the first frame update
@@ -160,10 +162,7 @@ public class PickupItem : MonoBehaviour
                 {
                     Extinguisher = true;
                     RNG = Random.Range(1, 100);
-                    if(RNG < 50)
-                    {
-                        FailedExtinguisher = true;
-                    }
+                    
                     hit.transform.GetComponent<DummyDisable>().DisableMe = true;
                 }
                 if (hit.transform.GetComponent<GoldPickup>().PickupA== false)
@@ -195,7 +194,15 @@ public class PickupItem : MonoBehaviour
             isUsingAxe = true;
 
         }
-        if( PickedUp == true && doneOnce == false)
+        if (RNG < 50)
+        {
+            FailedExtinguisher = true;
+        }
+        if(RNG > 50)
+        {
+            FailedExtinguisher = false;
+        }
+        if ( PickedUp == true && doneOnce == false)
         {
          //   FPM.speed = 3 - howSlow;
          //   FPM.runSpeed = 5 -howSlow;
