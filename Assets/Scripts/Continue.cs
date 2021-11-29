@@ -6,10 +6,12 @@ public class Continue : MonoBehaviour
 {
     public BooleanScene BS;
     public GameController GC;
+    public AudioClip DeathNoise;
     // Start is called before the first frame update
     void Start()
     {
-         BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
+        GetComponent<AudioSource>().PlayOneShot(DeathNoise);
+        BS = GameObject.Find("GameController").GetComponent<BooleanScene>();
         GC = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
