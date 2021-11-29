@@ -7,7 +7,7 @@ public class Extinguisher : MonoBehaviour
     private GameObject Nozzle;
     private BoxCollider BC;
     public bool Failure, inUse;
-    private float Timer, TotalTime = 10;
+    public float Timer, TotalTime = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +15,18 @@ public class Extinguisher : MonoBehaviour
         Nozzle.SetActive(false);
         BC = gameObject.GetComponent<BoxCollider>();
         BC.enabled = false;
+        TotalTime = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (TotalTime < 0)
+        {
+            gameObject.GetComponentInParent<PickupItem>().FailedExtinguisher = true;
+            BC.enabled = false;
+            Nozzle.SetActive(false);
+        }
         if(gameObject.GetComponentInParent<PickupItem>().FailedExtinguisher == true)
         {
             Failure = true;
@@ -34,7 +41,9 @@ public class Extinguisher : MonoBehaviour
             Nozzle.SetActive(true);
             BC.enabled = true;
             TotalTime -= Time.deltaTime;
+            
         }
+   
         if (Input.GetKeyUp(KeyCode.Mouse0) && Failure == false)
         {
             inUse = false;

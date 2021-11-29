@@ -95,7 +95,7 @@ public class PickupItem : MonoBehaviour
         }*/
         var ray = characterCamera.ViewportPointToRay(Vector3.one * 0.5f);
         RaycastHit hit;
-        if (Input.GetKeyUp(KeyCode.Mouse1))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             
             if(pickedItem == null)
@@ -152,7 +152,7 @@ public class PickupItem : MonoBehaviour
         {
             FPM.runSpeed = 1;
         }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             if (Physics.Raycast(ray, out hit, 5f))
             {
