@@ -48,6 +48,12 @@ public class EasySmoke : MonoBehaviour
     // declare a private field to track whether or not we have flashed the damage effect
     private bool damageFlashed = false;
 
+
+    public AudioSource PlayerAudio;
+    public int DamageSoundInterval;
+    public AudioClip[] DamageSounds;
+    private int currentDamageSoundInterval;
+
     // Start is called before the first frame update
     void Start()
     {
