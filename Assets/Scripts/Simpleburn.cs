@@ -14,10 +14,15 @@ public class Simpleburn : MonoBehaviour
     public float initialFlashTimer;
     public Image fireOverlay;
     public PickupItem Player;
+    public AudioSource PlayerAudio;
+    public int DamageSoundInterval;
+    public AudioClip[] DamageSounds;
+    private int currentDamageSoundInterval;
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
+        PlayerAudio = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         fireOverlay = GameObject.Find("FireOverlay").GetComponent<Image>();
         deathTimer = 0;
         maxTime = 4;
@@ -44,6 +49,18 @@ public class Simpleburn : MonoBehaviour
                 currentDamageTime = 0;
                 fireOverlay.enabled = true;
                 damageFlashed = true;
+                if (++currentDamageSoundInterval > DamageSoundInterval)
+                {
+                    currentDamageSoundInterval = 0;
+                    if (DamageSounds.Length > 0)
+                    {
+                        PlayerAudio.PlayOneShot(DamageSounds[Random.Range(0, DamageSounds.Length)]);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("There are no damage sounds assigned to SimpleBurn component on " + gameObject.name);
+                    }
+                }
             }
         }   
     }
@@ -70,6 +87,7 @@ public class Simpleburn : MonoBehaviour
             deathTimer = 0;
             inFire = false;
             currentDamageTime = damageInterval - initialFlashTimer;
+            currentDamageSoundInterval = DamageSoundInterval - 1;
             fireOverlay.enabled = false;
         }
     }
