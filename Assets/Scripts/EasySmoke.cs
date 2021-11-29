@@ -6,7 +6,9 @@ using UnityEngine.UI;
 // This file was written with mostly copilot
 
 public class EasySmoke : MonoBehaviour
-{
+{   // declare the player so we can increase the total time in the smoke
+    public PickupItem Player;
+
     // declare the total time needed for the smoke to reach the ground
     public float totalTime = 1.0f;
 
@@ -60,6 +62,9 @@ public class EasySmoke : MonoBehaviour
 
         // set the color of the smoke overlay to the smoke color
         smokeOverlay.color = smokeColor;
+
+        // find the player
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
     }
 
     // Update is called once per frame
@@ -76,6 +81,7 @@ public class EasySmoke : MonoBehaviour
                     smokeOverlay.color = smokeColor;
                 }
                 currentDamageTime += Time.deltaTime;
+                Player.SmokeTime += Time.deltaTime;
             }
             else
             {

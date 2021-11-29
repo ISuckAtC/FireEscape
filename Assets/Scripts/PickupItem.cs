@@ -24,6 +24,7 @@ public class PickupItem : MonoBehaviour
     public float FireTime, SmokeTime;
     [Header("Just tells us if the FireExtinguisher failed or not, is rolled every pickup")]
     public int RNG;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,10 @@ public class PickupItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SmokeTime == 0.02f)
+        {
+            SmokeTime = 0;
+        }
         if(Extinguisher == false)
         {
             FireExtinguisher.SetActive(false);
@@ -234,11 +239,11 @@ public class PickupItem : MonoBehaviour
         {
             showGold = 0;
         }
-       // if (slot.GetChild(0).gameObject.activeInHierarchy == false)
+        // if (slot.GetChild(0).gameObject.activeInHierarchy == false)
+
+        //  DropItem(slot.GetChild(0).gameObject.GetComponent<PickableItem>());
         
-          //  DropItem(slot.GetChild(0).gameObject.GetComponent<PickableItem>());
         
-       
     }
     private void PickItem(PickableItem item)
     {

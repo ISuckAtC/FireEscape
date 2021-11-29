@@ -13,13 +13,15 @@ public class Simpleburn : MonoBehaviour
     public float damageLength;
     public float initialFlashTimer;
     public Image fireOverlay;
+    public PickupItem Player;
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
         fireOverlay = GameObject.Find("FireOverlay").GetComponent<Image>();
         deathTimer = 0;
         maxTime = 4;
-
+        
         currentDamageTime = damageInterval - initialFlashTimer;
     }
 
@@ -51,8 +53,11 @@ public class Simpleburn : MonoBehaviour
         if (other.tag == "Player") 
         {
             inFire = true;
+            Player.FireTime += Time.deltaTime;
+            this.deathTimer += Time.deltaTime;
         }
-        this.deathTimer += Time.deltaTime;
+        
+        
         if (other.tag == "Player" && deathTimer > maxTime)
         {
             SceneManager.LoadScene("DeathScene");
