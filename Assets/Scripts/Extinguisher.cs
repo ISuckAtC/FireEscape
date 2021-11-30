@@ -27,6 +27,8 @@ public class Extinguisher : MonoBehaviour
         {
             emptyTimer = 0;
             TotalTime = 5;
+            audioBool = false;
+            audioSource.Stop();
             doOnce = true;
         }
         if (TotalTime < 0)
