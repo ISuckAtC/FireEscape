@@ -1097,10 +1097,10 @@ MonoBehaviour:
   badText: {fileID: 0}
   badestText: {fileID: 0}
   TimerCard: {fileID: 244577878}
-  firstBill: {fileID: 0}
-  secondBill: {fileID: 0}
-  thirdBill: {fileID: 0}
-  winScreen: {fileID: 0}
+  firstBill: {fileID: 1992914172}
+  secondBill: {fileID: 1210837162}
+  thirdBill: {fileID: 466997469}
+  winScreen: {fileID: 998817597}
   Old: 0
 --- !u!1 &1210837160
 GameObject:
