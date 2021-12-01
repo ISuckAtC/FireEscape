@@ -78,18 +78,22 @@ public class Extinguisher : MonoBehaviour
             audioBool = false;
             audioSource.Pause();
         }
-        if(TotalTime<0 || Failure == true)
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            Nozzle_Broken.GetComponent<ParticleSystem>().Play();
-            emptyTimer += Time.deltaTime;
-            if(emptyTimer > 1)
+            if (TotalTime < 0 || Failure == true)
             {
-                
-                audioSource.PlayOneShot(Empty, 0.5f);
-                emptyTimer = 0;
+                Nozzle_Broken.GetComponent<ParticleSystem>().Play();
+                emptyTimer += Time.deltaTime;
+                if (emptyTimer > 1)
+                {
+
+                    audioSource.PlayOneShot(Empty, 0.5f);
+                    emptyTimer = 0;
+                }
+
             }
-            
         }
+        
     }
     private void OnTriggerStay(Collider other)
     {
