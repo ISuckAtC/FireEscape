@@ -19322,8 +19322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTimer: 0
   maxTime: 4
-  damageInterval: 0.1
-  damageLength: 0.05
+  damageInterval: 0.2
+  damageLength: 0.1
   initialFlashTimer: 0.05
   fireOverlay: {fileID: 0}
   Player: {fileID: 0}
