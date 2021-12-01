@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Extinguisher : MonoBehaviour
 {
-    private GameObject Nozzle;
+    private GameObject Nozzle_Working, Nozzle_Broken;
     private BoxCollider BC;
     public bool Failure, inUse, doOnce, audioBool;
     public float Timer, TotalTime = 5, emptyTimer;
@@ -13,8 +13,10 @@ public class Extinguisher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Nozzle = gameObject.transform.GetChild(0).gameObject;
-        Nozzle.SetActive(false);
+        Nozzle_Working = gameObject.transform.GetChild(0).gameObject;
+        Nozzle_Broken = gameObject.transform.GetChild(1).gameObject;
+        Nozzle_Working.SetActive(false);
+        
         BC = gameObject.GetComponent<BoxCollider>();
         BC.enabled = false;
         
@@ -30,30 +32,36 @@ public class Extinguisher : MonoBehaviour
             audioBool = false;
             audioSource.Stop();
             doOnce = true;
+            Nozzle_Broken.GetComponent<ParticleSystem>().Clear();
+            Nozzle_Broken.GetComponent<ParticleSystem>().Pause();
         }
         if (TotalTime < 0)
         {
             gameObject.GetComponentInParent<PickupItem>().FailedExtinguisher = true;
             BC.enabled = false;
-            Nozzle.SetActive(false);
+            Nozzle_Working.SetActive(false);
+            Nozzle_Broken.GetComponent<ParticleSystem>().Pause();
            // audioSource.Play();
         }
         if(gameObject.GetComponentInParent<PickupItem>().FailedExtinguisher == true)
         {
             Failure = true;
+            
         }
         if(gameObject.GetComponentInParent<PickupItem>().FailedExtinguisher == false)
         {
             Failure = false;
+            
         }
         if (Input.GetKey(KeyCode.Mouse0) && Failure == false && TotalTime >0)
         {
             inUse = true;
-            Nozzle.SetActive(true);
+            Nozzle_Working.SetActive(true);
             BC.enabled = true;
             audioSource.clip = Fluids;
             TotalTime -= Time.deltaTime;
-            if(audioBool == false)
+            Nozzle_Broken.GetComponent<ParticleSystem>().Pause();
+            if (audioBool == false)
             {
                 audioSource.Play();
                 audioBool = true;
@@ -65,16 +73,18 @@ public class Extinguisher : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Mouse0) && Failure == false)
         {
             inUse = false;
-            Nozzle.SetActive(false);
+            Nozzle_Working.SetActive(false);
             BC.enabled = false;
             audioBool = false;
             audioSource.Pause();
         }
         if(TotalTime<0 || Failure == true)
         {
+            Nozzle_Broken.GetComponent<ParticleSystem>().Play();
             emptyTimer += Time.deltaTime;
             if(emptyTimer > 1)
             {
+                
                 audioSource.PlayOneShot(Empty, 0.5f);
                 emptyTimer = 0;
             }

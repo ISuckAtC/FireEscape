@@ -169,6 +169,7 @@ public class PickupItem : MonoBehaviour
                     RNG = Random.Range(1, 100);
                     FireExtinguisher.GetComponent<Extinguisher>().doOnce = false;
                     hit.transform.GetComponent<DummyDisable>().DisableMe = true;
+                    goto noPickup;
                 }
                 if (hit.transform.GetComponent<GoldPickup>().PickupA== false)
                 {
