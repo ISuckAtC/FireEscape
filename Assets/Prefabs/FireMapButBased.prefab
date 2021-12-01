@@ -99,7 +99,7 @@ MonoBehaviour:
   AxeMarkerPrefab: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
   ExitMarkerPrefab: {fileID: 4490903646786337018, guid: a0a71e068a5c5964682a2b0d91012e17, type: 3}
   OurSpritePrefab: {fileID: 1585788709226455883, guid: e6ca8972ccb415b40bc64d1af408cdb2, type: 3}
-  AxeSpritePrefab: {fileID: 33581898484453718, guid: 5b4861c6c9e28804d9dc2496e0b38e5e, type: 3}
+  AxeSpritePrefab: {fileID: 33581898484453718, guid: 65f109c2317276a4190edb59738313c5, type: 3}
   ExitSpritePrefab: {fileID: 3746795128391190224, guid: 7eac0863b6bcd904c93818f01749ae13, type: 3}
   IsSprite: 1
   PlayerMarkerUpdateInterval: 0.1
