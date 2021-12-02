@@ -46,4 +46,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("level1_LightsOutP");
         GC.Valuables = 0;
     }
+
+        public void TutorialScene()
+    {
+        SceneManager.LoadScene("ControlsScene");
+        GC.Valuables = 0;
+    }
 }
