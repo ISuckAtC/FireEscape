@@ -6,6 +6,7 @@ public class GameData : MonoBehaviour
 {
     public static GameData Instance;
     public static string NextScene;
+    public static int DeathType;
 
     void Awake()
     {

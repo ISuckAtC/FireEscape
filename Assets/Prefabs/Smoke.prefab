@@ -118,9 +118,9 @@ MonoBehaviour:
   smokeColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 0.39215687}
   damageColor: {r: 1, g: 0, b: 0, a: 0.3137255}
   damageInterval: 1.25
-  damageLength: 0.75
+  damageLength: 0.5
   PlayerAudio: {fileID: 0}
-  DamageSoundInterval: 5
+  DamageSoundInterval: 7
   DamageSounds:
   - {fileID: 8300000, guid: 50c14c8611cc7924b8f30c5efbc9aefc, type: 3}
   - {fileID: 8300000, guid: da6e96f0f2a4dc64aa099eaecf234be1, type: 3}

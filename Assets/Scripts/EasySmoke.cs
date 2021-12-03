@@ -73,6 +73,8 @@ public class EasySmoke : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PickupItem>();
 
         PlayerAudio = Player.GetComponent<AudioSource>();
+
+        currentDamageSoundInterval = DamageSoundInterval - 1;
     }
 
     // Update is called once per frame
@@ -83,7 +85,7 @@ public class EasySmoke : MonoBehaviour
         {
             if (currentDamageTime < damageInterval)
             {
-                if (damageFlashed && currentDamageTime > 0)
+                if (damageFlashed && currentDamageTime > damageLength)
                 {
                     damageFlashed = false;
                     smokeOverlay.color = smokeColor;
@@ -93,10 +95,10 @@ public class EasySmoke : MonoBehaviour
             }
             else
             {
-                currentDamageTime -= damageLength;
+                currentDamageTime = 0;
                 smokeOverlay.color = damageColor;
                 damageFlashed = true;
-                if (++currentDamageSoundInterval > DamageSoundInterval)
+                if (++currentDamageSoundInterval >= DamageSoundInterval)
                 {
                     currentDamageSoundInterval = 0;
                     if (DamageSounds.Length > 0)
@@ -115,6 +117,7 @@ public class EasySmoke : MonoBehaviour
             // if the current breath is less than 0, the player is dead
             if (currentBreath <= 0.0f)
             {
+                GameData.DeathType = 1;
                 // disable the renderer of the smoke
                 GetComponent<Renderer>().enabled = false;
                 // disable the script
@@ -165,6 +168,8 @@ public class EasySmoke : MonoBehaviour
 
             // get the tears component of the player and set tearing to false
             other.gameObject.GetComponent<Tears>().tearing = false;
+
+            currentDamageSoundInterval = DamageSoundInterval - 1;
 
             // log that the player has left the smoke
             Debug.Log("Left smoke");

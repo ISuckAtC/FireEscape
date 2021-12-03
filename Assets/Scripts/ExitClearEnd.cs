@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 public class ExitClearEnd : MonoBehaviour
 { 
     public GameController GC;
@@ -12,15 +13,27 @@ public class ExitClearEnd : MonoBehaviour
     public Text TimerCard;
     public Image firstBill, secondBill, thirdBill, winScreen;
     public bool Old;
+    public VideoPlayer videoPlayer;
+    public GameObject videoOut;
+    public VideoClip eatingDirtClip;
     // Start is called before the first frame update
     void Start()
     {
         GC = GameObject.Find("GameController").GetComponent<GameController>();
+        videoPlayer = GameObject.Find("VideoPlayer").GetComponent<VideoPlayer>();
+        videoOut = GameObject.Find("Video Out");
         firstBill.enabled = false;
         secondBill.enabled = false;
         thirdBill.enabled = false;
         winScreen.enabled = false;
-        EndCardLoad();
+
+        if (GC.Valuables >= (GC.maxValuablesForPreviousLevel * 2f / 4f))
+        {
+            videoPlayer.Play();
+            videoOut.SetActive(true);
+            Debug.Log((float)eatingDirtClip.length);
+            Invoke(nameof(EndCardLoad), (float)eatingDirtClip.length);
+        } else EndCardLoad();
     }
 
     // Update is called once per frame
@@ -70,6 +83,7 @@ public class ExitClearEnd : MonoBehaviour
 
     public void EndCardLoad()
     {
+        videoOut.SetActive(false);
         ScoreCard.text = "";
         ScoreCard.text += "These are your results\n\n";
 
