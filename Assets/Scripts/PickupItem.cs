@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickupItem : MonoBehaviour
 {
@@ -24,27 +25,32 @@ public class PickupItem : MonoBehaviour
     public float FireTime, SmokeTime;
     [Header("Just tells us if the FireExtinguisher failed or not, is rolled every pickup")]
     public int RNG;
-    
+
+    public Text PickupHint;
+    private bool displayHint;
+
+
     // Start is called before the first frame update
     void Start()
     {
 
         GC = GameObject.Find("GameController").GetComponent<GameController>();
-        
+        PickupHint = GameObject.FindGameObjectWithTag("PickupText").GetComponent<Text>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(SmokeTime == 0.02f)
+        if (SmokeTime == 0.02f)
         {
             SmokeTime = 0;
         }
-        if(Extinguisher == false)
+        if (Extinguisher == false)
         {
             FireExtinguisher.SetActive(false);
         }
-        if(Extinguisher == true)
+        if (Extinguisher == true)
         {
             FireExtinguisher.SetActive(true);
         }
@@ -104,64 +110,78 @@ public class PickupItem : MonoBehaviour
         RaycastHit hit;
         if (Input.GetKeyUp(KeyCode.E))
         {
-            
-            if(pickedItem == null)
+
+            if (pickedItem == null)
             {
                 Extinguisher = false;
-              /*  switch (showGold)
-                {
-                    case 1:
-                        HandHoldGold1.GetComponent<Rigidbody>().isKinematic = false;
+                /*  switch (showGold)
+                  {
+                      case 1:
+                          HandHoldGold1.GetComponent<Rigidbody>().isKinematic = false;
+                             break;
+                      case 2:
+                          HandHoldGold2.GetComponent<Rigidbody>().isKinematic = false;
+                          FPM.speed++;
+                          FPM.runSpeed++;
+                          break;
+                      case 3:
+                          HandHoldGold3.GetComponent<Rigidbody>().isKinematic = false;
                            break;
-                    case 2:
-                        HandHoldGold2.GetComponent<Rigidbody>().isKinematic = false;
-                        FPM.speed++;
-                        FPM.runSpeed++;
-                        break;
-                    case 3:
-                        HandHoldGold3.GetComponent<Rigidbody>().isKinematic = false;
+                      case 4:
+                          HandHoldGold4.GetComponent<Rigidbody>().isKinematic = false;
+                          FPM.speed++;
+                          FPM.runSpeed++;
+                          break;
+                      case 5:
+                          HandHoldGold5.GetComponent<Rigidbody>().isKinematic = false;
                          break;
-                    case 4:
-                        HandHoldGold4.GetComponent<Rigidbody>().isKinematic = false;
-                        FPM.speed++;
-                        FPM.runSpeed++;
-                        break;
-                    case 5:
-                        HandHoldGold5.GetComponent<Rigidbody>().isKinematic = false;
-                       break;
-                    case 6:
-                        HandHoldGold6.GetComponent<Rigidbody>().isKinematic = false;
-                        FPM.speed++;
-                        FPM.runSpeed++;
-                        break;
-                    case 7:
-                        HandHoldGold7.GetComponent<Rigidbody>().isKinematic = false;
-                         break;
-                    case 8:
-                        HandHoldGold8.GetComponent<Rigidbody>().isKinematic = false;
-                        FPM.speed++;
-                        FPM.runSpeed++;
-                        break;
-                }*/
+                      case 6:
+                          HandHoldGold6.GetComponent<Rigidbody>().isKinematic = false;
+                          FPM.speed++;
+                          FPM.runSpeed++;
+                          break;
+                      case 7:
+                          HandHoldGold7.GetComponent<Rigidbody>().isKinematic = false;
+                           break;
+                      case 8:
+                          HandHoldGold8.GetComponent<Rigidbody>().isKinematic = false;
+                          FPM.speed++;
+                          FPM.runSpeed++;
+                          break;
+                  }*/
                 goto nograbby;
             }
             DropItem(pickedItem);
         nograbby:;
             showGold--;
             howSlow--;
-            
+
         }
         if (FPM.speed < 1)
         {
             FPM.speed = 1;
         }
-        if(FPM.runSpeed < 1)
+        if (FPM.runSpeed < 1)
         {
             FPM.runSpeed = 1;
         }
-        if (Input.GetKeyUp(KeyCode.E))
+
+        if (Physics.Raycast(ray, out hit, 5f))
         {
-            if (Physics.Raycast(ray, out hit, 5f))
+            if (hit.transform.tag == "Extinguisher")
+            {
+                if (!displayHint)
+                {
+                    PickupHint.text = "Press E to pick up the Extinguisher";
+                    displayHint = true;
+                }
+            }
+            else if (displayHint)
+            {
+                PickupHint.text = "";
+                displayHint = false;
+            }
+            if (Input.GetKeyUp(KeyCode.E))
             {
                 if (hit.transform.tag == "Extinguisher")
                 {
@@ -171,15 +191,15 @@ public class PickupItem : MonoBehaviour
                     hit.transform.GetComponent<DummyDisable>().DisableMe = true;
                     goto noPickup;
                 }
-                if (hit.transform.GetComponent<GoldPickup>().PickupA== false)
+                if (hit.transform.GetComponent<GoldPickup>().PickupA == false)
                 {
-                   // hit.transform.GetComponent<BoxCollider>().enabled = false;
-                  //  hit.transform.GetComponent<GoldPickup>().shrinkEm = true;
+                    // hit.transform.GetComponent<BoxCollider>().enabled = false;
+                    //  hit.transform.GetComponent<GoldPickup>().shrinkEm = true;
                     // hit.transform.position = gameObject.transform.position;
                     goto noPickup;
                 }
                 var pickable = hit.transform.GetComponent<PickableItem>();
-               
+
                 // If object has PickableItem class
                 if (pickable && PickedUp == false)
                 {
@@ -191,6 +211,9 @@ public class PickupItem : MonoBehaviour
             noPickup:;
                 GC.ValueablePickup = true;
             }
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
             slot.rotation = new Quaternion();
             isUsingAxe = false;
         }
@@ -204,53 +227,53 @@ public class PickupItem : MonoBehaviour
         {
             FailedExtinguisher = true;
         }
-        if(RNG > 50)
+        if (RNG > 50)
         {
             FailedExtinguisher = false;
         }
-        if ( PickedUp == true && doneOnce == false)
+        if (PickedUp == true && doneOnce == false)
         {
-         //   FPM.speed = 3 - howSlow;
-         //   FPM.runSpeed = 5 -howSlow;
+            //   FPM.speed = 3 - howSlow;
+            //   FPM.runSpeed = 5 -howSlow;
             doneOnce = true;
         }
-        if( PickedUp == false && doneOnce == true)
+        if (PickedUp == false && doneOnce == true)
         {
-        //    FPM.speed = 5 - howSlow;
-          //  FPM.runSpeed = 9 -howSlow;
+            //    FPM.speed = 5 - howSlow;
+            //  FPM.runSpeed = 9 -howSlow;
             doneOnce = false;
         }
-        if( recentGold >= HeavyValue)
+        if (recentGold >= HeavyValue)
         {
-         //   FPM.speed--;
-          //  FPM.runSpeed--;
-           // howSlow++;
-            
+            //   FPM.speed--;
+            //  FPM.runSpeed--;
+            // howSlow++;
+
             recentGold = 0;
         }
-        if(Gold >= 5)
+        if (Gold >= 5)
         {
             GC.ManyValuables = true;
         }
-        if(howSlow < 0)
+        if (howSlow < 0)
         {
             howSlow = 0;
         }
-        if(showGold < 0)
+        if (showGold < 0)
         {
             showGold = 0;
         }
         // if (slot.GetChild(0).gameObject.activeInHierarchy == false)
 
         //  DropItem(slot.GetChild(0).gameObject.GetComponent<PickableItem>());
-        
-        
+
+
     }
     private void PickItem(PickableItem item)
     {
 
         // Check tag of item, if fire extinguisher use that
-        
+
         // Assign reference
         pickedItem = item;
         item.Rb.isKinematic = true;
