@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1616302927558011695}
   - component: {fileID: 6024134176085424320}
   - component: {fileID: 7103158899894236263}
-  - component: {fileID: 5579874315596330367}
   - component: {fileID: 8793727571277889547}
   - component: {fileID: 3106956467618079992}
   - component: {fileID: 7621894288075746707}
@@ -56,6 +55,7 @@ MonoBehaviour:
   GC: {fileID: 0}
   PickupNoise: {fileID: -4721422388123144021}
   PickupA: 1
+  PickupHint: {fileID: 0}
   shrinkEm: 0
 --- !u!65 &7103158899894236263
 BoxCollider:
@@ -70,22 +70,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.03, z: 0.07}
   m_Center: {x: 0, y: 0.02, z: 0}
---- !u!54 &5579874315596330367
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616302927558011694}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8793727571277889547
 BoxCollider:
   m_ObjectHideFlags: 0
