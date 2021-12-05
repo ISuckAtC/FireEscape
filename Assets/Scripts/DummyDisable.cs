@@ -18,6 +18,13 @@ public class DummyDisable : MonoBehaviour
         {
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider>().enabled = false;
+            DisableMe = false;
+            Invoke("DestroyMe", 1f);
         }
+    }
+
+    void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 }

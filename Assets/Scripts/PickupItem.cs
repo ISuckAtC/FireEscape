@@ -9,7 +9,7 @@ public class PickupItem : MonoBehaviour
     private Camera characterCamera;
     [SerializeField]
     private Transform slot, Rotated, goldPos1, goldPos2, goldPos3, goldPos4, goldPos5, goldPos6, goldPos7, goldPos8;
-    private PickableItem pickedItem;
+    public PickableItem pickedItem;
     public GameObject HandHoldGold1, HandHoldGold2, HandHoldGold3, HandHoldGold4, HandHoldGold5, HandHoldGold6, HandHoldGold7, HandHoldGold8;
     public bool PickedUp, isUsingAxe, usedItem, doneOnce, Extinguisher, FailedExtinguisher;
     [Header("how many valuables do you want the player to pickup to be slowed down?")]
@@ -28,6 +28,11 @@ public class PickupItem : MonoBehaviour
 
     public Text PickupHint;
     private bool displayHint;
+    private AudioSource playerAudio;
+    public AudioClip ExtinguisherPickupSound;
+    public AudioClip ExtinguisherDropSound;
+    public GameObject FireExtinguisherPrefab;
+    private bool droppedLastFrame;
 
 
     // Start is called before the first frame update
@@ -36,6 +41,7 @@ public class PickupItem : MonoBehaviour
 
         GC = GameObject.Find("GameController").GetComponent<GameController>();
         PickupHint = GameObject.FindGameObjectWithTag("PickupText").GetComponent<Text>();
+        playerAudio = GetComponent<AudioSource>();
 
     }
 
@@ -113,6 +119,12 @@ public class PickupItem : MonoBehaviour
 
             if (pickedItem == null)
             {
+                if (Extinguisher)
+                {
+                    playerAudio.PlayOneShot(ExtinguisherDropSound);
+                    Instantiate(FireExtinguisherPrefab, transform.position + (transform.forward * 2f), Quaternion.identity);
+                    droppedLastFrame = true;
+                }
                 Extinguisher = false;
                 /*  switch (showGold)
                   {
@@ -185,11 +197,16 @@ public class PickupItem : MonoBehaviour
             {
                 if (hit.transform.tag == "Extinguisher")
                 {
-                    Extinguisher = true;
-                    RNG = Random.Range(1, 100);
-                    FireExtinguisher.GetComponent<Extinguisher>().doOnce = false;
-                    hit.transform.GetComponent<DummyDisable>().DisableMe = true;
-                    goto noPickup;
+                    if (!droppedLastFrame)
+                    {
+                        playerAudio.PlayOneShot(ExtinguisherPickupSound);
+                        Extinguisher = true;
+                        RNG = Random.Range(1, 100);
+                        FireExtinguisher.GetComponent<Extinguisher>().doOnce = false;
+                        hit.transform.GetComponent<DummyDisable>().DisableMe = true;
+                        goto noPickup;
+                    }
+                    else droppedLastFrame = false;
                 }
                 if (hit.transform.GetComponent<GoldPickup>().PickupA == false)
                 {

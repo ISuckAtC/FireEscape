@@ -15,6 +15,7 @@ public class ExitClearEnd : MonoBehaviour
     public bool Old;
     public VideoPlayer videoPlayer;
     public GameObject videoOut;
+    private AudioSource audioSource;
     public VideoClip eatingDirtClip;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ExitClearEnd : MonoBehaviour
         GC = GameObject.Find("GameController").GetComponent<GameController>();
         videoPlayer = GameObject.Find("VideoPlayer").GetComponent<VideoPlayer>();
         videoOut = GameObject.Find("Video Out");
+        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         firstBill.enabled = false;
         secondBill.enabled = false;
         thirdBill.enabled = false;
@@ -155,18 +157,24 @@ public class ExitClearEnd : MonoBehaviour
     public IEnumerator LoadBill1()
     {
         yield return new WaitForSeconds(1f);
+        audioSource.Play();
+        yield return new WaitForSeconds(0.1f);
         firstBill.enabled = true;
     }
 
     public IEnumerator LoadBill2()
     {
         yield return new WaitForSeconds(1f);
+        audioSource.Play();
+        yield return new WaitForSeconds(0.1f);
         secondBill.enabled = true;
     }
 
     public IEnumerator LoadBill3()
     {
         yield return new WaitForSeconds(1f);
+        audioSource.Play();
+        yield return new WaitForSeconds(0.1f);
         thirdBill.enabled = true;
     }
 
