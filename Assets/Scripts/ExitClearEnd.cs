@@ -29,7 +29,7 @@ public class ExitClearEnd : MonoBehaviour
         thirdBill.enabled = false;
         winScreen.enabled = false;
 
-        if (GC.Valuables >= (GC.maxValuablesForPreviousLevel * 2f / 4f))
+        if (GC.Valuables >= (GC.maxValuablesForPreviousLevel / 4f))
         {
             videoPlayer.Play();
             videoOut.SetActive(true);
