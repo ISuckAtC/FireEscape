@@ -69,7 +69,10 @@ public class Extinguisher : MonoBehaviour
             
             
         }
-   
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            Nozzle_Broken.GetComponent<ParticleSystem>().Clear();
+        }
         if (Input.GetKeyUp(KeyCode.Mouse0) && Failure == false)
         {
             inUse = false;
